@@ -7,7 +7,7 @@ def main(page: ft.Page):
     # =========================================================
     # PAGE SETTINGS (Optimized for Fixed Header Layout)
     # =========================================================
-    page.title = "Henock H Nahango - Electrical Engineering Portfolio"
+    page.title = "Lavinia Ndilimeke Shimutwikeni - Mining Engineering Portfolio"
     page.theme_mode = ft.ThemeMode.LIGHT
     page.padding = 0
     page.spacing = 0
@@ -173,16 +173,16 @@ def main(page: ft.Page):
                             spacing=15,
                             controls=[
                                 ft.Text(
-                                    "ELECTRICAL ENGINEERING STUDENT @ UNAM", 
+                                    "MINING ENGINEERING STUDENT @ UNAM", 
                                     size=13, 
                                     weight=ft.FontWeight.W_600, 
                                     color=ACCENT_BLUE, 
                                     style=ft.TextStyle(letter_spacing=1.5)
                                 ),
-                                ft.Text("Henock H Nahango", size=42, weight=ft.FontWeight.BOLD, color=PRIMARY_BLUE),
+                                ft.Text("Lavinia Ndilimeke Shimutwikeni", size=42, weight=ft.FontWeight.BOLD, color=PRIMARY_BLUE),
                                 ft.Divider(color=PRIMARY_BLUE, thickness=1.5),
-                                ft.Text("Phone: +264 81 360 9793  |  Email: nahangohenock@gmail.com", size=14, weight=ft.FontWeight.W_500, color=DEEP_NAVY),
-                                ft.Text("Electrical Engineering student specializing in Power Systems, Control Systems, Embedded Electronics, Industrial Automation, Sensor Networks, MATLAB/Simulink, and Smart Monitoring Technologies. Passionate about developing intelligent engineering solutions for safety-critical environments.", size=16, color=TEXT_GREY),
+                                ft.Text("Phone: +264 81 360 9793  |  Email: shimutwikeni@gmail.com", size=14, weight=ft.FontWeight.W_500, color=DEEP_NAVY),
+                                ft.Text("Mining Engineering student specializing in Mine Safety Systems, Industrial Automation, Sensor Networks, MATLAB/Simulink, and Smart Monitoring Technologies for mining operations. Passionate about developing intelligent engineering solutions for safety-critical mining environments.", size=16, color=TEXT_GREY),
                                 ft.Container(height=10),
                                 ft.ElevatedButton(
                                     "Download CV (PDF)",
@@ -206,10 +206,10 @@ def main(page: ft.Page):
                                     bgcolor=AVATAR_BG,
                                     alignment=ft.Alignment(0, 0),
                                     border=get_uniform_border(4, PRIMARY_BLUE),
-                                    content=ft.Image(src="/images/Profile.jpeg", width=220, height=220, border_radius=110, fit="cover"),
+                                    content=ft.Image(src="/images/ozil picture.jpg", width=220, height=220, border_radius=110, fit="cover"),
                                 ),
                                 ft.Container(height=8),
-                                ft.Text("Electrical Engineering - Class of 2026", size=12, color=SUBTEXT_GREY, italic=True),
+                                ft.Text("Mining Engineering - Class of 2026", size=12, color=SUBTEXT_GREY, italic=True),
                             ],
                         ),
                     ]
@@ -299,9 +299,9 @@ def main(page: ft.Page):
                                 ft.Icon(ft.Icons.SCHOOL, color=PRIMARY_BLUE, size=24),
                                 ft.Text("Education", size=18, weight=ft.FontWeight.BOLD, color=DEEP_NAVY),
                             ]),
-                            ft.Text("• Bachelor of Engineering in Electrical Engineering", size=14, weight=ft.FontWeight.W_500, color=TEXT_GREY),
+                            ft.Text("• Bachelor of Engineering in Mining Engineering", size=14, weight=ft.FontWeight.W_500, color=TEXT_GREY),
                             ft.Text("  University of Namibia (UNAM) | 2023 - Present", size=13, color=SUBTEXT_GREY),
-                            ft.Text("• Relevant Coursework: Power Systems, Electrical Machines, Control Systems, Electronics, Embedded Systems, PLC & SCADA, Signal Processing, Renewable Energy Systems", size=13, color=TEXT_GREY),
+                            ft.Text("• Relevant Coursework: Mine Safety Systems, Mine Ventilation, Rock Mechanics, Mineral Processing, Mining Methods, Industrial Automation, Sensor Networks, MATLAB/Simulink", size=13, color=TEXT_GREY),
                         ]
                     )
                 ),
@@ -324,10 +324,10 @@ def main(page: ft.Page):
                                         ft.Text("Research Interests", size=16, weight=ft.FontWeight.BOLD, color=DEEP_NAVY),
                                     ]),
                                     ft.Text("• Smart Mining Systems", size=13, color=TEXT_GREY),
-                                    ft.Text("• Industrial Automation", size=13, color=TEXT_GREY),
-                                    ft.Text("• Power System Protection", size=13, color=TEXT_GREY),
-                                    ft.Text("• Embedded Electronics", size=13, color=TEXT_GREY),
-                                    ft.Text("• IoT Sensor Networks", size=13, color=TEXT_GREY),
+                                    ft.Text("• Mine Safety & Automation", size=13, color=TEXT_GREY),
+                                    ft.Text("• Mine Ventilation Monitoring", size=13, color=TEXT_GREY),
+                                    ft.Text("• Embedded Electronics for Mining", size=13, color=TEXT_GREY),
+                                    ft.Text("• IoT Sensor Networks in Mines", size=13, color=TEXT_GREY),
                                 ]
                             )
                         ),
@@ -344,11 +344,11 @@ def main(page: ft.Page):
                                         ft.Icon(ft.Icons.FLAG, color=PRIMARY_BLUE, size=24),
                                         ft.Text("Career Goals", size=16, weight=ft.FontWeight.BOLD, color=DEEP_NAVY),
                                     ]),
-                                    ft.Text("• Become a Professional Electrical Engineer", size=13, color=TEXT_GREY),
-                                    ft.Text("• Design Intelligent Industrial Systems", size=13, color=TEXT_GREY),
+                                    ft.Text("• Become a Professional Mining Engineer", size=13, color=TEXT_GREY),
+                                    ft.Text("• Design Intelligent Mine Safety Systems", size=13, color=TEXT_GREY),
                                     ft.Text("• Contribute to Mine Safety Innovation", size=13, color=TEXT_GREY),
-                                    ft.Text("• Pursue Advanced Research in Automation", size=13, color=TEXT_GREY),
-                                    ft.Text("• Lead Smart Infrastructure Projects", size=13, color=TEXT_GREY),
+                                    ft.Text("• Pursue Advanced Research in Mine Automation", size=13, color=TEXT_GREY),
+                                    ft.Text("• Lead Smart Mining Infrastructure Projects", size=13, color=TEXT_GREY),
                                 ]
                             )
                         ),
@@ -373,7 +373,7 @@ def main(page: ft.Page):
                                 controls=[
                                     ft.Container(col={"sm": 12, "md": 4}, content=ft.Row([ft.Icon(ft.Icons.CHECK_CIRCLE, color=ACCENT_BLUE, size=16), ft.Text("MATLAB/Simulink", size=13, color=TEXT_GREY)])),
                                     ft.Container(col={"sm": 12, "md": 4}, content=ft.Row([ft.Icon(ft.Icons.CHECK_CIRCLE, color=ACCENT_BLUE, size=16), ft.Text("PLC & SCADA", size=13, color=TEXT_GREY)])),
-                                    ft.Container(col={"sm": 12, "md": 4}, content=ft.Row([ft.Icon(ft.Icons.CHECK_CIRCLE, color=ACCENT_BLUE, size=16), ft.Text("Power System Analysis", size=13, color=TEXT_GREY)])),
+                                    ft.Container(col={"sm": 12, "md": 4}, content=ft.Row([ft.Icon(ft.Icons.CHECK_CIRCLE, color=ACCENT_BLUE, size=16), ft.Text("Mine Ventilation", size=13, color=TEXT_GREY)])),
                                     ft.Container(col={"sm": 12, "md": 4}, content=ft.Row([ft.Icon(ft.Icons.CHECK_CIRCLE, color=ACCENT_BLUE, size=16), ft.Text("Python Programming", size=13, color=TEXT_GREY)])),
                                     ft.Container(col={"sm": 12, "md": 4}, content=ft.Row([ft.Icon(ft.Icons.CHECK_CIRCLE, color=ACCENT_BLUE, size=16), ft.Text("Microcontroller Programming", size=13, color=TEXT_GREY)])),
                                     ft.Container(col={"sm": 12, "md": 4}, content=ft.Row([ft.Icon(ft.Icons.CHECK_CIRCLE, color=ACCENT_BLUE, size=16), ft.Text("Sensor Networks", size=13, color=TEXT_GREY)])),
@@ -400,9 +400,9 @@ def main(page: ft.Page):
                             ]),
                             ft.Text("• Completed 8+ MATLAB Certification Courses from MathWorks", size=13, color=TEXT_GREY),
                             ft.Text("• Dean's List Recognition for Academic Excellence (2024)", size=13, color=TEXT_GREY),
-                            ft.Text("• Participant in National Engineering Design Competition", size=13, color=TEXT_GREY),
-                            ft.Text("• Peer Tutor for Power Systems and Control Systems", size=13, color=TEXT_GREY),
-                            ft.Text("• Member of Electrical Engineering Student Society", size=13, color=TEXT_GREY),
+                            ft.Text("• Participant in National Mining Engineering Design Competition", size=13, color=TEXT_GREY),
+                            ft.Text("• Peer Tutor for Mine Safety and Automation Systems", size=13, color=TEXT_GREY),
+                            ft.Text("• Member of Mining Engineering Student Society", size=13, color=TEXT_GREY),
                         ]
                     )
                 ),
@@ -431,20 +431,20 @@ def main(page: ft.Page):
         ),
     )
 
-    # 2. Skills Section
+    # 2. Skills Section - Mining Focus
     skills_section = ft.Container(
         key="skills",
         bgcolor=SECTION_BLUE,
         padding=40,
         content=ft.Column([
-            create_section_header("CORE ELECTRICAL & TECHNICAL MATRIX", "Core expertise across power systems, industrial automation, control systems, and modern engineering tools."),
+            create_section_header("CORE MINING & TECHNICAL MATRIX", "Core expertise across mine safety systems, industrial automation, control systems, and modern mining engineering tools."),
             ft.ResponsiveRow([
                 ft.Column(col={"sm": 12, "md": 4}, spacing=10, controls=[
-                    ft.Text("Power & Energy Systems", weight=ft.FontWeight.BOLD, color=ACCENT_BLUE, size=16),
-                    create_skill_chip("Power System Analysis", 0.90),
-                    create_skill_chip("Electrical Machines", 0.88),
-                    create_skill_chip("Power Electronics", 0.85),
-                    create_skill_chip("Protection Systems", 0.82),
+                    ft.Text("Mine Safety & Systems", weight=ft.FontWeight.BOLD, color=ACCENT_BLUE, size=16),
+                    create_skill_chip("Mine Safety Systems", 0.90),
+                    create_skill_chip("Mine Ventilation", 0.88),
+                    create_skill_chip("Rock Mechanics", 0.85),
+                    create_skill_chip("Mine Rescue Systems", 0.82),
                 ]),
                 ft.Column(col={"sm": 12, "md": 4}, spacing=10, controls=[
                     ft.Text("Automation & Control", weight=ft.FontWeight.BOLD, color=ACCENT_BLUE, size=16),
@@ -464,7 +464,7 @@ def main(page: ft.Page):
         ])
     )
 
-    # 3. Individual Portfolio Reflection Section - EM Lab Focus (NO VIDEO)
+    # 3. Individual Portfolio Reflection Section - MineOps Focus (NO VIDEO)
     contribution_section = ft.Container(
         key="contribution",
         bgcolor=LIGHT_BG,
@@ -472,7 +472,7 @@ def main(page: ft.Page):
         content=ft.Column(
             spacing=20,
             controls=[
-                create_section_header("INDIVIDUAL CONTRIBUTION PORTFOLIO", "Reflection, evidence, lessons learned, challenges, and showcase material from EM Lab project."),
+                create_section_header("INDIVIDUAL CONTRIBUTION PORTFOLIO", "Reflection, evidence, lessons learned, challenges, and showcase material from MineOps project."),
                 ft.ResponsiveRow(
                     spacing=20,
                     run_spacing=20,
@@ -480,8 +480,8 @@ def main(page: ft.Page):
                         ft.Container(
                             col={"sm": 12, "md": 6},
                             content=create_info_card(
-                                "EM Lab Project Contribution",
-                                "Contributed to the EM Lab project through visitor mode implementation, dashboard testing, emergency contact validation, APK deployment, and FR-014 compliance verification.",
+                                "MineOps Project Contribution",
+                                "Contributed to the MineOps project through visitor mode implementation, dashboard testing, emergency contact validation, APK deployment, and FR-014 compliance verification.",
                                 ft.Icons.ENGINEERING,
                             ),
                         ),
@@ -489,7 +489,7 @@ def main(page: ft.Page):
                             col={"sm": 12, "md": 6},
                             content=create_info_card(
                                 "Evidence of Work",
-                                "Portfolio contains system screenshots, MATLAB analyses, testing records, APK demonstrations, GitHub activity, and engineering documentation.",
+                                "Portfolio contains system screenshots, MATLAB analyses, testing records, APK demonstrations, GitHub activity, and mining engineering documentation.",
                                 ft.Icons.FACT_CHECK,
                             ),
                         ),
@@ -497,7 +497,7 @@ def main(page: ft.Page):
                             col={"sm": 12, "md": 6},
                             content=create_info_card(
                                 "What I Learned",
-                                "Developed practical skills in industrial safety systems, sensor integration, software testing, and collaborative engineering development.",
+                                "Developed practical skills in mine safety systems, sensor integration, software testing, and collaborative mining engineering development.",
                                 ft.Icons.LIGHTBULB,
                             ),
                         ),
@@ -505,7 +505,7 @@ def main(page: ft.Page):
                             col={"sm": 12, "md": 6},
                             content=create_info_card(
                                 "Challenges Addressed",
-                                "Ensuring reliable communication between hardware sensors and software interfaces while maintaining system integrity and safety compliance.",
+                                "Ensuring reliable communication between hardware sensors and software interfaces while maintaining mine safety compliance and system integrity.",
                                 ft.Icons.TROUBLESHOOT,
                             ),
                         ),
@@ -515,7 +515,7 @@ def main(page: ft.Page):
         ),
     )
 
-    # 4. Timeline Section - EM Lab focused
+    # 4. Timeline Section - MineOps focused
     timeline_section = ft.Container(
         key="timeline",
         bgcolor=LIGHT_BG,
@@ -523,7 +523,7 @@ def main(page: ft.Page):
         content=ft.Column(
             spacing=20,
             controls=[
-                create_section_header("PROJECT TIMELINE", "Weekly log of my specific contributions to the EM Lab project."),
+                create_section_header("PROJECT TIMELINE", "Weekly log of my specific contributions to the MineOps project."),
                 ft.Container(
                     bgcolor=BG_WHITE,
                     padding=25,
@@ -533,15 +533,15 @@ def main(page: ft.Page):
                         spacing=15,
                         controls=[
                             ft.Text("Week 01 - Requirements Gathering and FR-014 Review", size=18, weight=ft.FontWeight.BOLD, color=ACCENT_BLUE),
-                            ft.Text("Reviewed the semester brief for EM Lab project, mapped requirements, and documented system specifications for FR-014 compliance verification.", color=TEXT_GREY),
+                            ft.Text("Reviewed the semester brief for MineOps project, mapped requirements, and documented system specifications for FR-014 compliance verification.", color=TEXT_GREY),
                             ft.Divider(color=BORDER_COLOR),
                             ft.Text("Week 02 - Dashboard Testing and Visitor Mode Verification", size=18, weight=ft.FontWeight.BOLD, color=ACCENT_BLUE),
-                            ft.Text("Performed comprehensive dashboard testing, implemented visitor mode functionality, and verified user access controls for the monitoring platform.", color=TEXT_GREY),
+                            ft.Text("Performed comprehensive dashboard testing, implemented visitor mode functionality, and verified user access controls for the mine monitoring platform.", color=TEXT_GREY),
                             ft.Divider(color=BORDER_COLOR),
                             ft.Text("Week 03 - Emergency Contact Validation and APK Deployment", size=18, weight=ft.FontWeight.BOLD, color=ACCENT_BLUE),
                             ft.Text("Validated emergency contact system integration, conducted APK deployment testing, and prepared build for demonstration.", color=TEXT_GREY),
                             ft.Divider(color=BORDER_COLOR),
-                            ft.Text("Week 04 - Final EM Lab Integration and Documentation", size=18, weight=ft.FontWeight.BOLD, color=ACCENT_BLUE),
+                            ft.Text("Week 04 - Final MineOps Integration and Documentation", size=18, weight=ft.FontWeight.BOLD, color=ACCENT_BLUE),
                             ft.Text("Completed final system integration, prepared documentation, captured testing evidence, and aligned portfolio for presentation showcase.", color=TEXT_GREY),
                         ],
                     ),
@@ -550,7 +550,7 @@ def main(page: ft.Page):
         ),
     )
 
-    # 5. EM Lab Projects Section
+    # 5. MineOps Projects Section
     project_section = ft.Container(
         key="projects",
         bgcolor=BG_WHITE,
@@ -558,7 +558,7 @@ def main(page: ft.Page):
         content=ft.Column(
             spacing=20,
             controls=[
-                create_section_header("EM LAB PROJECTS", "Advanced monitoring solutions for engineering environments."),
+                create_section_header("MINEOPS PROJECTS", "Advanced monitoring solutions for mining environments."),
                 ft.ResponsiveRow(
                     spacing=20,
                     run_spacing=20,
@@ -572,8 +572,8 @@ def main(page: ft.Page):
                             content=ft.Column(
                                 spacing=12,
                                 controls=[
-                                    ft.Text("1. EM Lab Application", size=18, weight=ft.FontWeight.BOLD, color=ACCENT_BLUE),
-                                    ft.Text("Comprehensive monitoring platform designed to improve safety through real-time environmental monitoring, emergency response integration, and intelligent alert systems.", color=TEXT_GREY, size=14),
+                                    ft.Text("1. MineOps Application", size=18, weight=ft.FontWeight.BOLD, color=ACCENT_BLUE),
+                                    ft.Text("Comprehensive mine monitoring platform designed to improve safety through real-time environmental monitoring, emergency response integration, and intelligent alert systems.", color=TEXT_GREY, size=14),
                                     ft.Container(
                                         bgcolor=LIGHT_BG,
                                         padding=12,
@@ -586,7 +586,7 @@ def main(page: ft.Page):
                                             ft.Text("• GitHub for version control and collaboration", size=12, font_family="monospace", color=ACCENT_BLUE),
                                         ])
                                     ),
-                                    ft.Text("Enables operators to monitor environmental conditions, receive alerts, and coordinate emergency responses from a unified platform.", color=TEXT_GREY, size=12),
+                                    ft.Text("Enables mine operators to monitor environmental conditions, receive alerts, and coordinate emergency responses from a unified platform.", color=TEXT_GREY, size=12),
                                     ft.Row([
                                         ft.Container(content=ft.Text("Python", size=11, color=BG_WHITE), bgcolor=PRIMARY_BLUE, padding=5, border_radius=4),
                                         ft.Container(content=ft.Text("Flet", size=11, color=DEEP_NAVY), bgcolor=LIGHT_BG, padding=5, border_radius=4),
@@ -604,8 +604,8 @@ def main(page: ft.Page):
                             content=ft.Column(
                                 spacing=12,
                                 controls=[
-                                    ft.Text("2. EM Lab Sensor Network Design", size=18, weight=ft.FontWeight.BOLD, color=ACCENT_BLUE),
-                                    ft.Text("Sensor architecture for environmental monitoring using ESP32-based nodes with real-time data acquisition and transmission capabilities.", color=TEXT_GREY, size=14),
+                                    ft.Text("2. MineOps Sensor Network Design", size=18, weight=ft.FontWeight.BOLD, color=ACCENT_BLUE),
+                                    ft.Text("Sensor architecture for mine environmental monitoring using ESP32-based nodes with real-time data acquisition and transmission capabilities.", color=TEXT_GREY, size=14),
                                     ft.Container(
                                         bgcolor=LIGHT_BG,
                                         padding=12,
@@ -618,7 +618,7 @@ def main(page: ft.Page):
                                             ft.Text("• ESP32 Controller with WiFi/BLE", size=12, font_family="monospace", color=ACCENT_BLUE),
                                         ])
                                     ),
-                                    ft.Text("Enables continuous environmental monitoring with early warning capabilities for hazardous gas levels and activity detection.", color=TEXT_GREY, size=12),
+                                    ft.Text("Enables continuous mine environmental monitoring with early warning capabilities for hazardous gas levels and activity detection.", color=TEXT_GREY, size=12),
                                     ft.Row([
                                         ft.Container(content=ft.Text("ESP32", size=11, color=BG_WHITE), bgcolor=PRIMARY_BLUE, padding=5, border_radius=4),
                                         ft.Container(content=ft.Text("IoT Sensors", size=11, color=DEEP_NAVY), bgcolor=LIGHT_BG, padding=5, border_radius=4),
@@ -633,7 +633,7 @@ def main(page: ft.Page):
         ),
     )
 
-    # 6. Technical Blog Section - Electrical Engineering focus with VIDEO (only here)
+    # 6. Technical Blog Section - Mining Engineering focus with VIDEO
     blog_section = ft.Container(
         key="blog",
         bgcolor=LIGHT_BG,
@@ -641,7 +641,7 @@ def main(page: ft.Page):
         content=ft.Column(
             spacing=20,
             controls=[
-                create_section_header("TECHNICAL BLOG: ELECTRICAL ENGINEERING INSIGHTS", "Written technical explanations with embedded video demonstrations."),
+                create_section_header("TECHNICAL BLOG: MINING ENGINEERING INSIGHTS", "Written technical explanations with embedded video demonstrations."),
                 ft.ResponsiveRow(
                     spacing=20,
                     run_spacing=20,
@@ -655,15 +655,15 @@ def main(page: ft.Page):
                             content=ft.Column(
                                 spacing=12,
                                 controls=[
-                                    ft.Text("Understanding Ohm's Law in Industrial Systems", size=18, weight=ft.FontWeight.BOLD, color=ACCENT_BLUE),
-                                    ft.Text("Application of fundamental electrical principles in industrial power distribution and equipment protection systems.", color=TEXT_GREY, size=13),
+                                    ft.Text("Understanding Mine Ventilation Systems", size=18, weight=ft.FontWeight.BOLD, color=ACCENT_BLUE),
+                                    ft.Text("Application of fundamental principles in mine ventilation and air quality management for miner safety.", color=TEXT_GREY, size=13),
                                     ft.Container(
                                         bgcolor=LIGHT_BG,
                                         padding=14,
                                         border_radius=6,
-                                        content=ft.Text("V = I × R   |   P = I² × R   |   I = V / R", font_family="monospace", size=14, color=PRIMARY_BLUE),
+                                        content=ft.Text("Q = A × V   |   Pressure Drop = R × Q²   |   Mine Airflow = Σ (Sections)", font_family="monospace", size=14, color=PRIMARY_BLUE),
                                     ),
-                                    ft.Text("Understanding these relationships is crucial for circuit protection, load calculation, and system design in industrial environments.", color=TEXT_GREY, size=13),
+                                    ft.Text("Understanding these relationships is crucial for mine ventilation planning, gas detection systems, and miner safety in underground operations.", color=TEXT_GREY, size=13),
                                 ],
                             ),
                         ),
@@ -676,8 +676,8 @@ def main(page: ft.Page):
                             content=ft.Column(
                                 spacing=12,
                                 controls=[
-                                    ft.Text("EM Lab Project Demonstration", size=18, weight=ft.FontWeight.BOLD, color=ACCENT_BLUE),
-                                    ft.Text("Video showcase of the EM Lab monitoring system in action.", color=TEXT_GREY, size=13),
+                                    ft.Text("MineOps Project Demonstration", size=18, weight=ft.FontWeight.BOLD, color=ACCENT_BLUE),
+                                    ft.Text("Video showcase of the MineOps monitoring system in action.", color=TEXT_GREY, size=13),
                                     ft.Container(
                                         content=ftv.Video(
                                             expand=True,
@@ -695,7 +695,7 @@ def main(page: ft.Page):
                                         border_radius=8,
                                         clip_behavior=ft.ClipBehavior.ANTI_ALIAS,
                                     ),
-                                    ft.Text("Watch the full demonstration of sensor integration, dashboard monitoring, and alert systems.", color=TEXT_GREY, size=12),
+                                    ft.Text("Watch the full demonstration of sensor integration, dashboard monitoring, and alert systems for mining safety.", color=TEXT_GREY, size=12),
                                 ],
                             ),
                         ),
@@ -705,7 +705,7 @@ def main(page: ft.Page):
         ),
     )
 
-    # 7. Experience / Leadership Section - Electrical Engineering focus
+    # 7. Experience / Leadership Section - Mining Engineering focus
     leadership_section = ft.Container(
         key="experience",
         bgcolor=LIGHT_BG,
@@ -713,8 +713,8 @@ def main(page: ft.Page):
         content=ft.Column(
             spacing=20,
             controls=[
-                create_section_header("ELECTRICAL ENGINEERING LEADERSHIP & EXPERIENCE", "Active contributions to engineering community and practical industry exposure."),
-                ft.Text("Bridging academic electrical engineering theory with practical industry applications while developing innovative safety solutions.", size=15, color=TEXT_GREY),
+                create_section_header("MINING ENGINEERING LEADERSHIP & EXPERIENCE", "Active contributions to mining engineering community and practical industry exposure."),
+                ft.Text("Bridging academic mining engineering theory with practical industry applications while developing innovative mine safety solutions.", size=15, color=TEXT_GREY),
                 ft.ResponsiveRow(
                     spacing=20,
                     controls=[
@@ -726,8 +726,8 @@ def main(page: ft.Page):
                             border=get_uniform_border(1, BORDER_COLOR),
                             content=ft.Column([
                                 ft.Icon(ft.Icons.GROUP, color=PRIMARY_BLUE, size=28),
-                                ft.Text("Electrical Engineering Society", size=16, weight=ft.FontWeight.BOLD, color=DEEP_NAVY),
-                                ft.Text("Active member contributing to workshops, industry guest lectures, and technical seminars on emerging electrical technologies.", color=TEXT_GREY, size=13),
+                                ft.Text("Mining Engineering Society", size=16, weight=ft.FontWeight.BOLD, color=DEEP_NAVY),
+                                ft.Text("Active member contributing to workshops, industry guest lectures, and technical seminars on emerging mining technologies.", color=TEXT_GREY, size=13),
                             ])
                         ),
                         ft.Container(
@@ -738,8 +738,8 @@ def main(page: ft.Page):
                             border=get_uniform_border(1, BORDER_COLOR),
                             content=ft.Column([
                                 ft.Icon(ft.Icons.SETTINGS, color=PRIMARY_BLUE, size=28),
-                                ft.Text("EM Lab Development Team", size=16, weight=ft.FontWeight.BOLD, color=DEEP_NAVY),
-                                ft.Text("Core contributor to EM Lab monitoring system development, testing, and documentation.", color=TEXT_GREY, size=13),
+                                ft.Text("MineOps Development Team", size=16, weight=ft.FontWeight.BOLD, color=DEEP_NAVY),
+                                ft.Text("Core contributor to MineOps monitoring system development, testing, and documentation.", color=TEXT_GREY, size=13),
                             ])
                         ),
                         ft.Container(
@@ -859,7 +859,7 @@ def main(page: ft.Page):
                     controls=[
                         ft.Column([
                             ft.Text("GITHUB EVIDENCE & DOCUMENTATION", size=28, weight=ft.FontWeight.BOLD, color=PRIMARY_BLUE),
-                            ft.Text("Verifiable individual contribution records for EM Lab project development.", size=15, color=TEXT_GREY),
+                            ft.Text("Verifiable individual contribution records for MineOps project development.", size=15, color=TEXT_GREY),
                         ]),
                         ft.IconButton(icon=ft.Icons.CODE, icon_color=PRIMARY_BLUE, tooltip="GitHub Evidence")
                     ]
@@ -872,7 +872,7 @@ def main(page: ft.Page):
                             col={"sm": 12, "md": 4},
                             content=create_info_card(
                                 "Commit History",
-                                "Screenshots showing commits authored by Henock Nahango in the EM Lab repository, including dates, messages, and linked files.",
+                                "Screenshots showing commits authored by Lavinia Shimutwikeni in the MineOps repository, including dates, messages, and linked files.",
                                 ft.Icons.COMMIT,
                             ),
                         ),
@@ -880,7 +880,7 @@ def main(page: ft.Page):
                             col={"sm": 12, "md": 4},
                             content=create_info_card(
                                 "Pull Request Logs",
-                                "Documentation of proposed features, reviews performed, comments resolved, and merges completed during EM Lab development.",
+                                "Documentation of proposed features, reviews performed, comments resolved, and merges completed during MineOps development.",
                                 ft.Icons.MERGE,
                             ),
                         ),
@@ -888,7 +888,7 @@ def main(page: ft.Page):
                             col={"sm": 12, "md": 4},
                             content=create_info_card(
                                 "Impact Summary",
-                                "My code and documentation improved sensor integration, dashboard functionality, and explained engineering outputs for compliance.",
+                                "My code and documentation improved sensor integration, dashboard functionality, and explained mining engineering outputs for compliance.",
                                 ft.Icons.INSIGHTS,
                             ),
                         ),
@@ -907,8 +907,8 @@ def main(page: ft.Page):
                             content=ft.Column(
                                 spacing=12,
                                 controls=[
-                                    ft.Row([ft.Icon(ft.Icons.FOLDER_SPECIAL, color=PRIMARY_BLUE), ft.Text("EM-Lab-App", size=16, weight=ft.FontWeight.BOLD, color=DEEP_NAVY)]),
-                                    ft.Text("Python/Flet based monitoring platform with real-time alerts and emergency response features.", size=13, color=TEXT_GREY),
+                                    ft.Row([ft.Icon(ft.Icons.FOLDER_SPECIAL, color=PRIMARY_BLUE), ft.Text("MineOps-App", size=16, weight=ft.FontWeight.BOLD, color=DEEP_NAVY)]),
+                                    ft.Text("Python/Flet based mine monitoring platform with real-time alerts and emergency response features.", size=13, color=TEXT_GREY),
                                     ft.Row(wrap=True, spacing=5, controls=[
                                         ft.Container(content=ft.Text("Python", size=10, color=BG_WHITE), bgcolor=PRIMARY_BLUE, padding=4, border_radius=4),
                                         ft.Container(content=ft.Text("Flet", size=10, color=DEEP_NAVY), bgcolor=LIGHT_BG, padding=4, border_radius=4),
@@ -931,8 +931,8 @@ def main(page: ft.Page):
                             content=ft.Column(
                                 spacing=12,
                                 controls=[
-                                    ft.Row([ft.Icon(ft.Icons.FOLDER, color=PRIMARY_BLUE), ft.Text("EM-Lab-Sensor-Network", size=16, weight=ft.FontWeight.BOLD, color=DEEP_NAVY)]),
-                                    ft.Text("ESP32-based sensor network for environmental monitoring with gas, temperature, and vibration sensors.", size=13, color=TEXT_GREY),
+                                    ft.Row([ft.Icon(ft.Icons.FOLDER, color=PRIMARY_BLUE), ft.Text("MineOps-Sensor-Network", size=16, weight=ft.FontWeight.BOLD, color=DEEP_NAVY)]),
+                                    ft.Text("ESP32-based sensor network for mine environmental monitoring with gas, temperature, and vibration sensors.", size=13, color=TEXT_GREY),
                                     ft.Row(wrap=True, spacing=5, controls=[
                                         ft.Container(content=ft.Text("Embedded C", size=10, color=BG_WHITE), bgcolor=PRIMARY_BLUE, padding=4, border_radius=4),
                                         ft.Container(content=ft.Text("ESP32", size=10, color=DEEP_NAVY), bgcolor=LIGHT_BG, padding=4, border_radius=4),
@@ -1053,7 +1053,7 @@ def main(page: ft.Page):
         bgcolor=BG_WHITE,
         padding=40,
         content=ft.Column([
-            create_section_header("GET IN TOUCH", "Collaborate on electrical engineering projects, automation systems, or safety monitoring solutions."),
+            create_section_header("GET IN TOUCH", "Collaborate on mining engineering projects, automation systems, or mine safety monitoring solutions."),
             ft.ResponsiveRow(
                 spacing=30,
                 controls=[
@@ -1061,10 +1061,10 @@ def main(page: ft.Page):
                         col={"sm": 12, "md": 5},
                         spacing=15,
                         controls=[
-                            ft.Text("Available for Electrical Engineering collaborations, automation projects, power systems research, industrial monitoring solutions, and embedded systems development.", color=TEXT_GREY, size=15),
+                            ft.Text("Available for Mining Engineering collaborations, automation projects, mine safety research, industrial monitoring solutions, and embedded systems development.", color=TEXT_GREY, size=15),
                             ft.Container(height=10),
-                            ft.Row([ft.Icon(ft.Icons.LOCATION_ON, color=PRIMARY_BLUE), ft.Text("Electrical Engineering Campus, University of Namibia, Namibia", color=DEEP_NAVY, weight=ft.FontWeight.W_500)]),
-                            ft.Row([ft.Icon(ft.Icons.EMAIL, color=PRIMARY_BLUE), ft.Text("nahangohenock@gmail.com", color=DEEP_NAVY, weight=ft.FontWeight.W_500)]),
+                            ft.Row([ft.Icon(ft.Icons.LOCATION_ON, color=PRIMARY_BLUE), ft.Text("Mining Engineering Campus, University of Namibia, Namibia", color=DEEP_NAVY, weight=ft.FontWeight.W_500)]),
+                            ft.Row([ft.Icon(ft.Icons.EMAIL, color=PRIMARY_BLUE), ft.Text("shimutwikeni@gmail.com", color=DEEP_NAVY, weight=ft.FontWeight.W_500)]),
                             ft.Row([ft.Icon(ft.Icons.PHONE, color=PRIMARY_BLUE), ft.Text("+264 81 360 9793", color=DEEP_NAVY, weight=ft.FontWeight.W_500)]),
                         ]
                     ),
@@ -1082,7 +1082,7 @@ def main(page: ft.Page):
                                 ft.Container(height=5),
                                 ft.ElevatedButton("Submit Message", icon=ft.Icons.SEND, bgcolor=PRIMARY_BLUE, color=BG_WHITE, on_click=handle_submit_message, style=ft.ButtonStyle(shape=ft.RoundedRectangleBorder(radius=6))),
                                 ft.Text(
-                                    "I consent to having Henock H Nahango store my submitted information so that he can respond to my inquiry.",
+                                    "I consent to having Lavinia Ndilimeke Shimutwikeni store my submitted information so that she can respond to my inquiry.",
                                     size=11,
                                     color=SUBTEXT_GREY,
                                 ),
@@ -1104,7 +1104,7 @@ def main(page: ft.Page):
         "experience": leadership_section,
         "certificates": certification_section,
         "github": github_section,
-        "mineops": mineops_section,  # Added MineOps section
+        "mineops": mineops_section,
         "contact": contact_section,
     }
 
@@ -1143,7 +1143,7 @@ def main(page: ft.Page):
             controls=[
                 ft.Row([
                     ft.Container(width=12, height=12, bgcolor=BG_WHITE, border_radius=6),
-                    ft.Text("HENOCK H NAHANGO", weight=ft.FontWeight.BOLD, size=16, color=BG_WHITE, style=ft.TextStyle(letter_spacing=1.1))
+                    ft.Text("LAVINIA N SHIMUTWIKENI", weight=ft.FontWeight.BOLD, size=16, color=BG_WHITE, style=ft.TextStyle(letter_spacing=1.1))
                 ], spacing=10),
                 ft.Row([
                     make_nav_button("Overview", "overview"),
@@ -1155,7 +1155,7 @@ def main(page: ft.Page):
                     make_nav_button("Experience", "experience"),
                     make_nav_button("MATLAB Hub", "certificates"),
                     make_nav_button("GitHub", "github"),
-                    make_nav_button("MineOps", "mineops"),  # Added MineOps nav button
+                    make_nav_button("MineOps", "mineops"),
                     make_nav_button("Contact", "contact"),
                 ], spacing=10, wrap=True)
             ]
