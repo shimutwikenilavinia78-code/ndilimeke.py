@@ -37,6 +37,10 @@ def main(page: ft.Page):
     PROGRESS_TRACK = "#e2e8f0"
     SHADOW_BLUE = "#4299e1"
     CERT_HINT = "#bee3f8"
+    
+    # MineOps specific colors
+    MINEOPS_GOLD = "#d4af37"
+    MINEOPS_DARK = "#0a1628"
 
     def open_certificate_zoom(title: str, image_file: str):
         zoom_dialog = ft.AlertDialog(
@@ -202,7 +206,7 @@ def main(page: ft.Page):
                                     bgcolor=AVATAR_BG,
                                     alignment=ft.Alignment(0, 0),
                                     border=get_uniform_border(4, PRIMARY_BLUE),
-                                    content=ft.Image(src="/images/ozil picture.jpg", width=220, height=220, border_radius=110, fit="cover"),
+                                    content=ft.Image(src="/images/Profile.jpeg", width=220, height=220, border_radius=110, fit="cover"),
                                 ),
                                 ft.Container(height=8),
                                 ft.Text("Electrical Engineering - Class of 2026", size=12, color=SUBTEXT_GREY, italic=True),
@@ -947,6 +951,88 @@ def main(page: ft.Page):
         ),
     )
 
+    # =========================================================
+    # MINEOPS DEDICATION SECTION (NEW)
+    # =========================================================
+    mineops_section = ft.Container(
+        key="mineops",
+        bgcolor=MINEOPS_DARK,
+        padding=50,
+        content=ft.Column(
+            spacing=25,
+            horizontal_alignment=ft.CrossAxisAlignment.CENTER,
+            controls=[
+                ft.Icon(ft.Icons.MINER_CRASH, color=MINEOPS_GOLD, size=64),
+                ft.Text(
+                    "⚒️ DEDICATED TO MINEOPS ⚒️",
+                    size=32,
+                    weight=ft.FontWeight.BOLD,
+                    color=MINEOPS_GOLD,
+                    text_align=ft.TextAlign.CENTER,
+                    style=ft.TextStyle(letter_spacing=2),
+                ),
+                ft.Container(
+                    width=100,
+                    height=3,
+                    bgcolor=MINEOPS_GOLD,
+                    border_radius=2,
+                ),
+                ft.Text(
+                    "This portfolio is proudly dedicated to the MineOps project —",
+                    size=18,
+                    color=BG_WHITE,
+                    text_align=ft.TextAlign.CENTER,
+                    weight=ft.FontWeight.W_500,
+                ),
+                ft.Text(
+                    "an innovative initiative revolutionizing mining safety through intelligent monitoring systems, real-time hazard detection, and advanced industrial automation.",
+                    size=16,
+                    color="#cbd5e1",
+                    text_align=ft.TextAlign.CENTER,
+                    italic=True,
+                ),
+                ft.Container(height=10),
+                ft.ResponsiveRow(
+                    alignment=ft.MainAxisAlignment.CENTER,
+                    spacing=30,
+                    controls=[
+                        ft.Container(
+                            bgcolor=MINEOPS_GOLD,
+                            padding=ft.Padding(20, 10, 20, 10),
+                            border_radius=8,
+                            content=ft.Text(
+                                "🔗 MineOps Repository",
+                                size=14,
+                                weight=ft.FontWeight.BOLD,
+                                color=MINEOPS_DARK,
+                            ),
+                            on_click=lambda e: page.launch_url("https://github.com/makotajr06/UNAM-I3691CP-SyntaxCrew-MineOps"),
+                        ),
+                        ft.Container(
+                            bgcolor=ACCENT_BLUE,
+                            padding=ft.Padding(20, 10, 20, 10),
+                            border_radius=8,
+                            content=ft.Text(
+                                "🏗️ SyntaxCrew Project",
+                                size=14,
+                                weight=ft.FontWeight.BOLD,
+                                color=BG_WHITE,
+                            ),
+                            on_click=lambda e: page.launch_url("https://github.com/makotajr06/UNAM-I3691CP-SyntaxCrew-MineOps"),
+                        ),
+                    ],
+                ),
+                ft.Container(height=20),
+                ft.Text(
+                    "© 2024 | Honoring the vision of safer, smarter mining operations",
+                    size=12,
+                    color="#94a3b8",
+                    text_align=ft.TextAlign.CENTER,
+                ),
+            ],
+        ),
+    )
+
     # 10. Contact Section Form Setup
     name_field = ft.TextField(label="Your Full Name", border_color=PRIMARY_BLUE, focused_border_color=ACCENT_BLUE)
     email_field = ft.TextField(label="Email Address", border_color=PRIMARY_BLUE, focused_border_color=ACCENT_BLUE)
@@ -1018,6 +1104,7 @@ def main(page: ft.Page):
         "experience": leadership_section,
         "certificates": certification_section,
         "github": github_section,
+        "mineops": mineops_section,  # Added MineOps section
         "contact": contact_section,
     }
 
@@ -1068,6 +1155,7 @@ def main(page: ft.Page):
                     make_nav_button("Experience", "experience"),
                     make_nav_button("MATLAB Hub", "certificates"),
                     make_nav_button("GitHub", "github"),
+                    make_nav_button("MineOps", "mineops"),  # Added MineOps nav button
                     make_nav_button("Contact", "contact"),
                 ], spacing=10, wrap=True)
             ]
