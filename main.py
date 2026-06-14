@@ -42,7 +42,20 @@ def main(page: ft.Page):
     MINEOPS_GOLD = "#d4af37"
     MINEOPS_DARK = "#0a1628"
 
-    def open_certificate_zoom(title: str, image_file: str):
+    # Image mapping based on available assets
+    IMAGES = {
+        "profile": "/images/Profile.jpeg",
+        "mineops_logo": "/images/Mine_Ops.jpeg",
+        "matlab_onramp": "/images/MATLAB_Onramp.png",
+        "simulink_onramp": "/images/Simulink_Onramp.png",
+        "calculations_vectors": "/images/Calculations_with_Vectors_and_Matrices.png",
+        "explore_data": "/images/Explore_Data_with_MATLAB_Plots.png",
+        "manipulate_matrices": "/images/Make_and_Manipulate_Matrices.png",
+        "regression_deep": "/images/Regression_with_Deep_Learning.png",
+        "signal_segmentation": "/images/Signal_Segmentation_with_Deep_Learning.png",
+    }
+
+    def open_certificate_zoom(title: str, image_src: str):
         zoom_dialog = ft.AlertDialog(
             modal=True,
             title=ft.Text(title, color=PRIMARY_BLUE, weight=ft.FontWeight.BOLD),
@@ -52,7 +65,7 @@ def main(page: ft.Page):
                 bgcolor=BG_WHITE,
                 padding=10,
                 border_radius=8,
-                content=ft.Image(src=f"/images/{image_file}", fit="contain"),
+                content=ft.Image(src=image_src, fit="contain"),
             ),
             actions=[
                 ft.TextButton("Close", on_click=lambda e: close_certificate_zoom(zoom_dialog)),
@@ -206,7 +219,7 @@ def main(page: ft.Page):
                                     bgcolor=AVATAR_BG,
                                     alignment=ft.Alignment(0, 0),
                                     border=get_uniform_border(4, PRIMARY_BLUE),
-                                    content=ft.Image(src="/images/ozil picture.jpg", width=220, height=220, border_radius=110, fit="cover"),
+                                    content=ft.Image(src=IMAGES["profile"], width=220, height=220, border_radius=110, fit="cover"),
                                 ),
                                 ft.Container(height=8),
                                 ft.Text("Mining Engineering - Class of 2026", size=12, color=SUBTEXT_GREY, italic=True),
@@ -572,7 +585,10 @@ def main(page: ft.Page):
                             content=ft.Column(
                                 spacing=12,
                                 controls=[
-                                    ft.Text("1. MineOps Application", size=18, weight=ft.FontWeight.BOLD, color=ACCENT_BLUE),
+                                    ft.Row([
+                                        ft.Image(src=IMAGES["mineops_logo"], width=40, height=40, fit="contain"),
+                                        ft.Text("1. MineOps Application", size=18, weight=ft.FontWeight.BOLD, color=ACCENT_BLUE),
+                                    ]),
                                     ft.Text("Comprehensive mine monitoring platform designed to improve safety through real-time environmental monitoring, emergency response integration, and intelligent alert systems.", color=TEXT_GREY, size=14),
                                     ft.Container(
                                         bgcolor=LIGHT_BG,
@@ -604,7 +620,10 @@ def main(page: ft.Page):
                             content=ft.Column(
                                 spacing=12,
                                 controls=[
-                                    ft.Text("2. MineOps Sensor Network Design", size=18, weight=ft.FontWeight.BOLD, color=ACCENT_BLUE),
+                                    ft.Row([
+                                        ft.Icon(ft.Icons.SENSORS, color=ACCENT_BLUE, size=30),
+                                        ft.Text("2. MineOps Sensor Network Design", size=18, weight=ft.FontWeight.BOLD, color=ACCENT_BLUE),
+                                    ]),
                                     ft.Text("Sensor architecture for mine environmental monitoring using ESP32-based nodes with real-time data acquisition and transmission capabilities.", color=TEXT_GREY, size=14),
                                     ft.Container(
                                         bgcolor=LIGHT_BG,
@@ -760,22 +779,21 @@ def main(page: ft.Page):
         )
     )
 
-    # 8. MATLAB Achievement Hub Section
+    # 8. MATLAB Achievement Hub Section - Updated with actual certificate images
     certificate_data = [
-        {"title": "MATLAB Onramp", "file": "matlab onramp certificate ozil_page-0001.jpg"},
-        {"title": "Simulink Onramp", "file": "simulink onramp certificate ozil_page-0001.jpg"},
-        {"title": "Core MATLAB Skills", "file": "core matlab skills certificate ozil_page-0001.jpg"},
-        {"title": "Calculations with Vectors", "file": "calculations with vertor certificate ozil_page-0001.jpg"},
-        {"title": "Machine Learning Onramp", "file": "machine learning onramp certificate ozil additional_page-0001.jpg"},
-        {"title": "Simulink Fundamentals", "file": "simulink fundamental certificate ozil_page-0001.jpg"},
-        {"title": "The How and Why of Writing Functions", "file": "the how and why of writig functions certificate ozil additional_page-0001.jpg"},
-        {"title": "Visualization in MATLAB", "file": "visualization in matlab certificate ozil_page-0001.jpg"},
+        {"title": "MATLAB Onramp", "image": IMAGES["matlab_onramp"]},
+        {"title": "Simulink Onramp", "image": IMAGES["simulink_onramp"]},
+        {"title": "Calculations with Vectors and Matrices", "image": IMAGES["calculations_vectors"]},
+        {"title": "Explore Data with MATLAB Plots", "image": IMAGES["explore_data"]},
+        {"title": "Make and Manipulate Matrices", "image": IMAGES["manipulate_matrices"]},
+        {"title": "Regression with Deep Learning", "image": IMAGES["regression_deep"]},
+        {"title": "Signal Segmentation with Deep Learning", "image": IMAGES["signal_segmentation"]},
     ]
 
     cert_cards = []
     for cert in certificate_data:
         img_control = ft.Image(
-            src=f"/images/{cert['file']}",
+            src=cert["image"],
             height=150,
             fit="contain", 
             scale=1.0,
@@ -787,7 +805,7 @@ def main(page: ft.Page):
             padding=15,
             border_radius=10,
             border=get_uniform_border(1, ACCENT_BLUE),
-            on_click=lambda e, title=cert["title"], file=cert["file"]: open_certificate_zoom(title, file),
+            on_click=lambda e, title=cert["title"], img_src=cert["image"]: open_certificate_zoom(title, img_src),
             content=ft.Column(
                 horizontal_alignment=ft.CrossAxisAlignment.CENTER,
                 controls=[
@@ -952,7 +970,7 @@ def main(page: ft.Page):
     )
 
     # =========================================================
-    # MINEOPS DEDICATION SECTION (NEW)
+    # MINEOPS DEDICATION SECTION
     # =========================================================
     mineops_section = ft.Container(
         key="mineops",
@@ -962,7 +980,7 @@ def main(page: ft.Page):
             spacing=25,
             horizontal_alignment=ft.CrossAxisAlignment.CENTER,
             controls=[
-                ft.Icon(ft.Icons.MINER_CRASH, color=MINEOPS_GOLD, size=64),
+                ft.Image(src=IMAGES["mineops_logo"], width=80, height=80, fit="contain"),
                 ft.Text(
                     "⚒️ DEDICATED TO MINEOPS ⚒️",
                     size=32,
