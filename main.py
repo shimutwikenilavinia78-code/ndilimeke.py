@@ -11,36 +11,36 @@ def main(page: ft.Page):
     page.theme_mode = ft.ThemeMode.LIGHT
     page.padding = 0
     page.spacing = 0
-    page.bgcolor = "#f0f4f8"
+    page.bgcolor = "#fff0f5"  # Lavender Blush - Soft pink background
     page.scroll = None
 
     # =========================================================
-    # PREMIUM DARK BLUE COLOR PALETTE
+    # PREMIUM PINK COLOR PALETTE
     # =========================================================
-    PRIMARY_BLUE = "#1a365d"        # Deep Navy Blue
-    ACCENT_BLUE = "#2c5282"         # Medium Blue
-    DEEP_NAVY = "#0f2442"           # Darker Navy for text/buttons
-    LIGHT_BG = "#f0f4f8"            # Soft light blue-tint background
-    SECTION_BLUE = "#e2e8f0"
-    SECTION_DEEP = "#cbd5e1"
+    PRIMARY_PINK = "#d63384"        # Deep Pink/Magenta
+    ACCENT_PINK = "#f06292"         # Medium Pink
+    DEEP_PINK = "#ad1457"           # Darker Pink for text/buttons
+    LIGHT_BG = "#fff0f5"            # Soft pink-tint background
+    SECTION_PINK = "#fce4ec"        # Very light pink sections
+    SECTION_DEEP = "#f8bbd0"        # Deeper pink sections
     BG_WHITE = "#ffffff"
-    TEXT_GREY = "#1e293b"
-    AVATAR_BG = "#e2e8f0"
-    SUBTEXT_GREY = "#475569"
+    TEXT_GREY = "#4a154b"            # Dark purple-grey for text
+    AVATAR_BG = "#fce4ec"
+    SUBTEXT_GREY = "#6a1b6a"
     CARD_BG = "#ffffff"
-    BORDER_COLOR = "#90cdf4"
+    BORDER_COLOR = "#f48fb1"
     
-    DARK_CARD_BG = "#1a365d"
+    DARK_CARD_BG = "#880e4f"
     DARK_TEXT_WHITE = "#ffffff"
-    NAV_INACTIVE = "#90cdf4"
-    OVERLAY_BLUE = "#2c5282"
-    PROGRESS_TRACK = "#e2e8f0"
-    SHADOW_BLUE = "#4299e1"
-    CERT_HINT = "#bee3f8"
+    NAV_INACTIVE = "#f8bbd0"
+    OVERLAY_PINK = "#f06292"
+    PROGRESS_TRACK = "#fce4ec"
+    SHADOW_PINK = "#ec407a"
+    CERT_HINT = "#f8bbd0"
     
     # MineOps specific colors
-    MINEOPS_GOLD = "#d4af37"
-    MINEOPS_DARK = "#0a1628"
+    MINEOPS_GOLD = "#ffd700"
+    MINEOPS_PINK = "#ff69b4"
 
     # Image mapping based on available assets
     IMAGES = {
@@ -58,7 +58,7 @@ def main(page: ft.Page):
     def open_certificate_zoom(title: str, image_src: str):
         zoom_dialog = ft.AlertDialog(
             modal=True,
-            title=ft.Text(title, color=PRIMARY_BLUE, weight=ft.FontWeight.BOLD),
+            title=ft.Text(title, color=PRIMARY_PINK, weight=ft.FontWeight.BOLD),
             content=ft.Container(
                 width=900,
                 height=620,
@@ -96,11 +96,11 @@ def main(page: ft.Page):
                     title, 
                     size=28, 
                     weight=ft.FontWeight.BOLD, 
-                    color=PRIMARY_BLUE, 
+                    color=PRIMARY_PINK, 
                     style=ft.TextStyle(letter_spacing=1.2)
                 ),
                 ft.Text(subtitle, size=15, color=TEXT_GREY),
-                ft.Container(height=4, width=60, bgcolor=ACCENT_BLUE, border_radius=2),
+                ft.Container(height=4, width=60, bgcolor=ACCENT_PINK, border_radius=2),
                 ft.Container(height=15)
             ]
         )
@@ -113,13 +113,13 @@ def main(page: ft.Page):
             border=get_uniform_border(1, BORDER_COLOR),
             content=ft.Column([
                 ft.Row([
-                    ft.Text(label, weight=ft.FontWeight.W_600, color=DEEP_NAVY, size=14),
-                    ft.Text(f"{int(level*100)}%", weight=ft.FontWeight.BOLD, color=PRIMARY_BLUE, size=12)
+                    ft.Text(label, weight=ft.FontWeight.W_600, color=DEEP_PINK, size=14),
+                    ft.Text(f"{int(level*100)}%", weight=ft.FontWeight.BOLD, color=PRIMARY_PINK, size=12)
                 ], alignment=ft.MainAxisAlignment.SPACE_BETWEEN),
                 ft.Container(height=6),
                 ft.Stack([
                     ft.Container(height=4, bgcolor=PROGRESS_TRACK, border_radius=2, expand=True),
-                    ft.Container(height=4, bgcolor=PRIMARY_BLUE, border_radius=2, width=120 * level)
+                    ft.Container(height=4, bgcolor=PRIMARY_PINK, border_radius=2, width=120 * level)
                 ])
             ])
         )
@@ -134,8 +134,8 @@ def main(page: ft.Page):
                 spacing=10,
                 controls=[
                     ft.Row([
-                        ft.Icon(icon, color=PRIMARY_BLUE, size=24),
-                        ft.Text(title, size=16, weight=ft.FontWeight.BOLD, color=DEEP_NAVY),
+                        ft.Icon(icon, color=PRIMARY_PINK, size=24),
+                        ft.Text(title, size=16, weight=ft.FontWeight.BOLD, color=DEEP_PINK),
                     ]),
                     ft.Text(body, color=TEXT_GREY, size=13),
                 ],
@@ -163,7 +163,7 @@ def main(page: ft.Page):
         for key, button in nav_buttons.items():
             button.style = ft.ButtonStyle(
                 color=BG_WHITE if key == page_key else NAV_INACTIVE,
-                overlay_color=OVERLAY_BLUE,
+                overlay_color=OVERLAY_PINK,
             )
         page.update()
 
@@ -186,21 +186,21 @@ def main(page: ft.Page):
                             spacing=15,
                             controls=[
                                 ft.Text(
-                                    "MINING ENGINEERING STUDENT @ UNAM", 
+                                    "MINING ENGINEERING STUDENT @ UNAM | MINEOPS TEAM MEMBER", 
                                     size=13, 
                                     weight=ft.FontWeight.W_600, 
-                                    color=ACCENT_BLUE, 
+                                    color=ACCENT_PINK, 
                                     style=ft.TextStyle(letter_spacing=1.5)
                                 ),
-                                ft.Text("Lavinia Ndilimeke Shimutwikeni", size=42, weight=ft.FontWeight.BOLD, color=PRIMARY_BLUE),
-                                ft.Divider(color=PRIMARY_BLUE, thickness=1.5),
-                                ft.Text("Phone: +264 81 360 9793  |  Email: shimutwikeni@gmail.com", size=14, weight=ft.FontWeight.W_500, color=DEEP_NAVY),
+                                ft.Text("Lavinia Ndilimeke Shimutwikeni", size=42, weight=ft.FontWeight.BOLD, color=PRIMARY_PINK),
+                                ft.Divider(color=PRIMARY_PINK, thickness=1.5),
+                                ft.Text("Phone: +264 81 360 9793  |  Email: shimutwikeni@gmail.com", size=14, weight=ft.FontWeight.W_500, color=DEEP_PINK),
                                 ft.Text("Mining Engineering student specializing in Mine Safety Systems, Industrial Automation, Sensor Networks, MATLAB/Simulink, and Smart Monitoring Technologies for mining operations. Passionate about developing intelligent engineering solutions for safety-critical mining environments.", size=16, color=TEXT_GREY),
                                 ft.Container(height=10),
                                 ft.ElevatedButton(
                                     "Download CV (PDF)",
                                     icon=ft.Icons.DOWNLOAD,
-                                    bgcolor=PRIMARY_BLUE,
+                                    bgcolor=PRIMARY_PINK,
                                     color=BG_WHITE,
                                     url="/cv.pdf",
                                     style=ft.ButtonStyle(shape=ft.RoundedRectangleBorder(radius=6)),
@@ -218,7 +218,7 @@ def main(page: ft.Page):
                                     border_radius=110,
                                     bgcolor=AVATAR_BG,
                                     alignment=ft.Alignment(0, 0),
-                                    border=get_uniform_border(4, PRIMARY_BLUE),
+                                    border=get_uniform_border(4, PRIMARY_PINK),
                                     content=ft.Image(src=IMAGES["profile"], width=220, height=220, border_radius=110, fit="cover"),
                                 ),
                                 ft.Container(height=8),
@@ -242,8 +242,8 @@ def main(page: ft.Page):
                                 horizontal_alignment=ft.CrossAxisAlignment.CENTER,
                                 spacing=5,
                                 controls=[
-                                    ft.Icon(ft.Icons.SCHOOL, color=PRIMARY_BLUE, size=32),
-                                    ft.Text("3+", size=24, weight=ft.FontWeight.BOLD, color=PRIMARY_BLUE),
+                                    ft.Icon(ft.Icons.SCHOOL, color=PRIMARY_PINK, size=32),
+                                    ft.Text("3+", size=24, weight=ft.FontWeight.BOLD, color=PRIMARY_PINK),
                                     ft.Text("Years of Study", size=12, color=TEXT_GREY),
                                 ]
                             )
@@ -258,8 +258,8 @@ def main(page: ft.Page):
                                 horizontal_alignment=ft.CrossAxisAlignment.CENTER,
                                 spacing=5,
                                 controls=[
-                                    ft.Icon(ft.Icons.CODE, color=PRIMARY_BLUE, size=32),
-                                    ft.Text("8+", size=24, weight=ft.FontWeight.BOLD, color=PRIMARY_BLUE),
+                                    ft.Icon(ft.Icons.CODE, color=PRIMARY_PINK, size=32),
+                                    ft.Text("8+", size=24, weight=ft.FontWeight.BOLD, color=PRIMARY_PINK),
                                     ft.Text("MATLAB Certifications", size=12, color=TEXT_GREY),
                                 ]
                             )
@@ -274,8 +274,8 @@ def main(page: ft.Page):
                                 horizontal_alignment=ft.CrossAxisAlignment.CENTER,
                                 spacing=5,
                                 controls=[
-                                    ft.Icon(ft.Icons.WORK, color=PRIMARY_BLUE, size=32),
-                                    ft.Text("5+", size=24, weight=ft.FontWeight.BOLD, color=PRIMARY_BLUE),
+                                    ft.Icon(ft.Icons.WORK, color=PRIMARY_PINK, size=32),
+                                    ft.Text("5+", size=24, weight=ft.FontWeight.BOLD, color=PRIMARY_PINK),
                                     ft.Text("Projects Completed", size=12, color=TEXT_GREY),
                                 ]
                             )
@@ -290,9 +290,9 @@ def main(page: ft.Page):
                                 horizontal_alignment=ft.CrossAxisAlignment.CENTER,
                                 spacing=5,
                                 controls=[
-                                    ft.Icon(ft.Icons.GROUP, color=PRIMARY_BLUE, size=32),
-                                    ft.Text("3+", size=24, weight=ft.FontWeight.BOLD, color=PRIMARY_BLUE),
-                                    ft.Text("Team Projects", size=12, color=TEXT_GREY),
+                                    ft.Icon(ft.Icons.GROUP, color=PRIMARY_PINK, size=32),
+                                    ft.Text("16", size=24, weight=ft.FontWeight.BOLD, color=PRIMARY_PINK),
+                                    ft.Text("Team Members", size=12, color=TEXT_GREY),
                                 ]
                             )
                         ),
@@ -309,8 +309,8 @@ def main(page: ft.Page):
                         spacing=10,
                         controls=[
                             ft.Row([
-                                ft.Icon(ft.Icons.SCHOOL, color=PRIMARY_BLUE, size=24),
-                                ft.Text("Education", size=18, weight=ft.FontWeight.BOLD, color=DEEP_NAVY),
+                                ft.Icon(ft.Icons.SCHOOL, color=PRIMARY_PINK, size=24),
+                                ft.Text("Education", size=18, weight=ft.FontWeight.BOLD, color=DEEP_PINK),
                             ]),
                             ft.Text("• Bachelor of Engineering in Mining Engineering", size=14, weight=ft.FontWeight.W_500, color=TEXT_GREY),
                             ft.Text("  University of Namibia (UNAM) | 2023 - Present", size=13, color=SUBTEXT_GREY),
@@ -333,8 +333,8 @@ def main(page: ft.Page):
                                 spacing=10,
                                 controls=[
                                     ft.Row([
-                                        ft.Icon(ft.Icons.SCIENCE, color=PRIMARY_BLUE, size=24),
-                                        ft.Text("Research Interests", size=16, weight=ft.FontWeight.BOLD, color=DEEP_NAVY),
+                                        ft.Icon(ft.Icons.SCIENCE, color=PRIMARY_PINK, size=24),
+                                        ft.Text("Research Interests", size=16, weight=ft.FontWeight.BOLD, color=DEEP_PINK),
                                     ]),
                                     ft.Text("• Smart Mining Systems", size=13, color=TEXT_GREY),
                                     ft.Text("• Mine Safety & Automation", size=13, color=TEXT_GREY),
@@ -354,8 +354,8 @@ def main(page: ft.Page):
                                 spacing=10,
                                 controls=[
                                     ft.Row([
-                                        ft.Icon(ft.Icons.FLAG, color=PRIMARY_BLUE, size=24),
-                                        ft.Text("Career Goals", size=16, weight=ft.FontWeight.BOLD, color=DEEP_NAVY),
+                                        ft.Icon(ft.Icons.FLAG, color=PRIMARY_PINK, size=24),
+                                        ft.Text("Career Goals", size=16, weight=ft.FontWeight.BOLD, color=DEEP_PINK),
                                     ]),
                                     ft.Text("• Become a Professional Mining Engineer", size=13, color=TEXT_GREY),
                                     ft.Text("• Design Intelligent Mine Safety Systems", size=13, color=TEXT_GREY),
@@ -378,20 +378,20 @@ def main(page: ft.Page):
                         spacing=10,
                         controls=[
                             ft.Row([
-                                ft.Icon(ft.Icons.SETTINGS, color=PRIMARY_BLUE, size=24),
-                                ft.Text("Technical Skills Snapshot", size=18, weight=ft.FontWeight.BOLD, color=DEEP_NAVY),
+                                ft.Icon(ft.Icons.SETTINGS, color=PRIMARY_PINK, size=24),
+                                ft.Text("Technical Skills Snapshot", size=18, weight=ft.FontWeight.BOLD, color=DEEP_PINK),
                             ]),
                             ft.ResponsiveRow(
                                 spacing=10,
                                 controls=[
-                                    ft.Container(col={"sm": 12, "md": 4}, content=ft.Row([ft.Icon(ft.Icons.CHECK_CIRCLE, color=ACCENT_BLUE, size=16), ft.Text("MATLAB/Simulink", size=13, color=TEXT_GREY)])),
-                                    ft.Container(col={"sm": 12, "md": 4}, content=ft.Row([ft.Icon(ft.Icons.CHECK_CIRCLE, color=ACCENT_BLUE, size=16), ft.Text("PLC & SCADA", size=13, color=TEXT_GREY)])),
-                                    ft.Container(col={"sm": 12, "md": 4}, content=ft.Row([ft.Icon(ft.Icons.CHECK_CIRCLE, color=ACCENT_BLUE, size=16), ft.Text("Mine Ventilation", size=13, color=TEXT_GREY)])),
-                                    ft.Container(col={"sm": 12, "md": 4}, content=ft.Row([ft.Icon(ft.Icons.CHECK_CIRCLE, color=ACCENT_BLUE, size=16), ft.Text("Python Programming", size=13, color=TEXT_GREY)])),
-                                    ft.Container(col={"sm": 12, "md": 4}, content=ft.Row([ft.Icon(ft.Icons.CHECK_CIRCLE, color=ACCENT_BLUE, size=16), ft.Text("Microcontroller Programming", size=13, color=TEXT_GREY)])),
-                                    ft.Container(col={"sm": 12, "md": 4}, content=ft.Row([ft.Icon(ft.Icons.CHECK_CIRCLE, color=ACCENT_BLUE, size=16), ft.Text("Sensor Networks", size=13, color=TEXT_GREY)])),
-                                    ft.Container(col={"sm": 12, "md": 4}, content=ft.Row([ft.Icon(ft.Icons.CHECK_CIRCLE, color=ACCENT_BLUE, size=16), ft.Text("Git / GitHub", size=13, color=TEXT_GREY)])),
-                                    ft.Container(col={"sm": 12, "md": 4}, content=ft.Row([ft.Icon(ft.Icons.CHECK_CIRCLE, color=ACCENT_BLUE, size=16), ft.Text("Flet Framework", size=13, color=TEXT_GREY)])),
+                                    ft.Container(col={"sm": 12, "md": 4}, content=ft.Row([ft.Icon(ft.Icons.CHECK_CIRCLE, color=ACCENT_PINK, size=16), ft.Text("MATLAB/Simulink", size=13, color=TEXT_GREY)])),
+                                    ft.Container(col={"sm": 12, "md": 4}, content=ft.Row([ft.Icon(ft.Icons.CHECK_CIRCLE, color=ACCENT_PINK, size=16), ft.Text("PLC & SCADA", size=13, color=TEXT_GREY)])),
+                                    ft.Container(col={"sm": 12, "md": 4}, content=ft.Row([ft.Icon(ft.Icons.CHECK_CIRCLE, color=ACCENT_PINK, size=16), ft.Text("Mine Ventilation", size=13, color=TEXT_GREY)])),
+                                    ft.Container(col={"sm": 12, "md": 4}, content=ft.Row([ft.Icon(ft.Icons.CHECK_CIRCLE, color=ACCENT_PINK, size=16), ft.Text("Python Programming", size=13, color=TEXT_GREY)])),
+                                    ft.Container(col={"sm": 12, "md": 4}, content=ft.Row([ft.Icon(ft.Icons.CHECK_CIRCLE, color=ACCENT_PINK, size=16), ft.Text("Microcontroller Programming", size=13, color=TEXT_GREY)])),
+                                    ft.Container(col={"sm": 12, "md": 4}, content=ft.Row([ft.Icon(ft.Icons.CHECK_CIRCLE, color=ACCENT_PINK, size=16), ft.Text("Sensor Networks", size=13, color=TEXT_GREY)])),
+                                    ft.Container(col={"sm": 12, "md": 4}, content=ft.Row([ft.Icon(ft.Icons.CHECK_CIRCLE, color=ACCENT_PINK, size=16), ft.Text("Git / GitHub", size=13, color=TEXT_GREY)])),
+                                    ft.Container(col={"sm": 12, "md": 4}, content=ft.Row([ft.Icon(ft.Icons.CHECK_CIRCLE, color=ACCENT_PINK, size=16), ft.Text("React Native", size=13, color=TEXT_GREY)])),
                                 ]
                             )
                         ]
@@ -408,8 +408,8 @@ def main(page: ft.Page):
                         spacing=10,
                         controls=[
                             ft.Row([
-                                ft.Icon(ft.Icons.EMOJI_EVENTS, color=PRIMARY_BLUE, size=24),
-                                ft.Text("Achievements & Awards", size=18, weight=ft.FontWeight.BOLD, color=DEEP_NAVY),
+                                ft.Icon(ft.Icons.EMOJI_EVENTS, color=PRIMARY_PINK, size=24),
+                                ft.Text("Achievements & Awards", size=18, weight=ft.FontWeight.BOLD, color=DEEP_PINK),
                             ]),
                             ft.Text("• Completed 8+ MATLAB Certification Courses from MathWorks", size=13, color=TEXT_GREY),
                             ft.Text("• Dean's List Recognition for Academic Excellence (2024)", size=13, color=TEXT_GREY),
@@ -428,7 +428,7 @@ def main(page: ft.Page):
                         ft.ElevatedButton(
                             "Download Full CV",
                             icon=ft.Icons.DOWNLOAD,
-                            bgcolor=PRIMARY_BLUE,
+                            bgcolor=PRIMARY_PINK,
                             color=BG_WHITE,
                             style=ft.ButtonStyle(shape=ft.RoundedRectangleBorder(radius=6)),
                         ),
@@ -447,27 +447,27 @@ def main(page: ft.Page):
     # 2. Skills Section - Mining Focus
     skills_section = ft.Container(
         key="skills",
-        bgcolor=SECTION_BLUE,
+        bgcolor=SECTION_PINK,
         padding=40,
         content=ft.Column([
             create_section_header("CORE MINING & TECHNICAL MATRIX", "Core expertise across mine safety systems, industrial automation, control systems, and modern mining engineering tools."),
             ft.ResponsiveRow([
                 ft.Column(col={"sm": 12, "md": 4}, spacing=10, controls=[
-                    ft.Text("Mine Safety & Systems", weight=ft.FontWeight.BOLD, color=ACCENT_BLUE, size=16),
+                    ft.Text("Mine Safety & Systems", weight=ft.FontWeight.BOLD, color=ACCENT_PINK, size=16),
                     create_skill_chip("Mine Safety Systems", 0.90),
                     create_skill_chip("Mine Ventilation", 0.88),
                     create_skill_chip("Rock Mechanics", 0.85),
                     create_skill_chip("Mine Rescue Systems", 0.82),
                 ]),
                 ft.Column(col={"sm": 12, "md": 4}, spacing=10, controls=[
-                    ft.Text("Automation & Control", weight=ft.FontWeight.BOLD, color=ACCENT_BLUE, size=16),
+                    ft.Text("Automation & Control", weight=ft.FontWeight.BOLD, color=ACCENT_PINK, size=16),
                     create_skill_chip("PLC Programming", 0.89),
                     create_skill_chip("SCADA Systems", 0.86),
                     create_skill_chip("Industrial Automation", 0.84),
                     create_skill_chip("Control Systems", 0.88),
                 ]),
                 ft.Column(col={"sm": 12, "md": 4}, spacing=10, controls=[
-                    ft.Text("Embedded & Digital Tools", weight=ft.FontWeight.BOLD, color=ACCENT_BLUE, size=16),
+                    ft.Text("Embedded & Digital Tools", weight=ft.FontWeight.BOLD, color=ACCENT_PINK, size=16),
                     create_skill_chip("MATLAB/Simulink", 0.87),
                     create_skill_chip("Python", 0.80),
                     create_skill_chip("Embedded Systems", 0.85),
@@ -494,7 +494,7 @@ def main(page: ft.Page):
                             col={"sm": 12, "md": 6},
                             content=create_info_card(
                                 "MineOps Project Contribution",
-                                "Contributed to the MineOps project through visitor mode implementation, dashboard testing, emergency contact validation, APK deployment, and FR-014 compliance verification.",
+                                "As a Lead Developer on the MineOps team, I contributed to the React Native application development, hazard reporting system implementation, Firebase integration, and safety monitoring features.",
                                 ft.Icons.ENGINEERING,
                             ),
                         ),
@@ -510,7 +510,7 @@ def main(page: ft.Page):
                             col={"sm": 12, "md": 6},
                             content=create_info_card(
                                 "What I Learned",
-                                "Developed practical skills in mine safety systems, sensor integration, software testing, and collaborative mining engineering development.",
+                                "Developed practical skills in React Native mobile development, Firebase real-time database integration, collaborative software development, and mine safety system design.",
                                 ft.Icons.LIGHTBULB,
                             ),
                         ),
@@ -518,7 +518,7 @@ def main(page: ft.Page):
                             col={"sm": 12, "md": 6},
                             content=create_info_card(
                                 "Challenges Addressed",
-                                "Ensuring reliable communication between hardware sensors and software interfaces while maintaining mine safety compliance and system integrity.",
+                                "Ensuring reliable real-time hazard reporting between workers and supervisors while maintaining mine safety compliance and system integrity in remote mining locations.",
                                 ft.Icons.TROUBLESHOOT,
                             ),
                         ),
@@ -545,17 +545,17 @@ def main(page: ft.Page):
                     content=ft.Column(
                         spacing=15,
                         controls=[
-                            ft.Text("Week 01 - Requirements Gathering and FR-014 Review", size=18, weight=ft.FontWeight.BOLD, color=ACCENT_BLUE),
-                            ft.Text("Reviewed the semester brief for MineOps project, mapped requirements, and documented system specifications for FR-014 compliance verification.", color=TEXT_GREY),
+                            ft.Text("Week 01 - Requirements Gathering and Firebase Setup", size=18, weight=ft.FontWeight.BOLD, color=ACCENT_PINK),
+                            ft.Text("Reviewed the semester brief for MineOps project, mapped requirements, and set up Firebase Realtime Database for hazard data synchronization.", color=TEXT_GREY),
                             ft.Divider(color=BORDER_COLOR),
-                            ft.Text("Week 02 - Dashboard Testing and Visitor Mode Verification", size=18, weight=ft.FontWeight.BOLD, color=ACCENT_BLUE),
-                            ft.Text("Performed comprehensive dashboard testing, implemented visitor mode functionality, and verified user access controls for the mine monitoring platform.", color=TEXT_GREY),
+                            ft.Text("Week 02 - Hazard Reporting Interface Development", size=18, weight=ft.FontWeight.BOLD, color=ACCENT_PINK),
+                            ft.Text("Developed the hazard reporting form interface, implemented real-time data submission, and integrated with Firebase database.", color=TEXT_GREY),
                             ft.Divider(color=BORDER_COLOR),
-                            ft.Text("Week 03 - Emergency Contact Validation and APK Deployment", size=18, weight=ft.FontWeight.BOLD, color=ACCENT_BLUE),
-                            ft.Text("Validated emergency contact system integration, conducted APK deployment testing, and prepared build for demonstration.", color=TEXT_GREY),
+                            ft.Text("Week 03 - Supervisor Dashboard and Emergency Contact Integration", size=18, weight=ft.FontWeight.BOLD, color=ACCENT_PINK),
+                            ft.Text("Created supervisor dashboard for monitoring hazards, integrated emergency contact system, and implemented real-time notifications.", color=TEXT_GREY),
                             ft.Divider(color=BORDER_COLOR),
-                            ft.Text("Week 04 - Final MineOps Integration and Documentation", size=18, weight=ft.FontWeight.BOLD, color=ACCENT_BLUE),
-                            ft.Text("Completed final system integration, prepared documentation, captured testing evidence, and aligned portfolio for presentation showcase.", color=TEXT_GREY),
+                            ft.Text("Week 04 - Final MineOps Integration and Testing", size=18, weight=ft.FontWeight.BOLD, color=ACCENT_PINK),
+                            ft.Text("Completed final system integration, conducted comprehensive testing, prepared documentation, and aligned portfolio for presentation showcase.", color=TEXT_GREY),
                         ],
                     ),
                 ),
@@ -587,26 +587,26 @@ def main(page: ft.Page):
                                 controls=[
                                     ft.Row([
                                         ft.Image(src=IMAGES["mineops_logo"], width=40, height=40, fit="contain"),
-                                        ft.Text("1. MineOps Application", size=18, weight=ft.FontWeight.BOLD, color=ACCENT_BLUE),
+                                        ft.Text("1. MineOps Mobile Application", size=18, weight=ft.FontWeight.BOLD, color=ACCENT_PINK),
                                     ]),
-                                    ft.Text("Comprehensive mine monitoring platform designed to improve safety through real-time environmental monitoring, emergency response integration, and intelligent alert systems.", color=TEXT_GREY, size=14),
+                                    ft.Text("React Native mobile application designed to improve safety and communication in mining operations. Replaces paper-based hazard logs with a real-time digital platform.", color=TEXT_GREY, size=14),
                                     ft.Container(
                                         bgcolor=LIGHT_BG,
                                         padding=12,
                                         border_radius=6,
                                         content=ft.Column([
-                                            ft.Text("TECHNOLOGY STACK:", size=11, weight=ft.FontWeight.BOLD, color=DEEP_NAVY),
-                                            ft.Text("• Python + Flet Framework for cross-platform UI", size=12, font_family="monospace", color=ACCENT_BLUE),
-                                            ft.Text("• MATLAB for data analysis and algorithm development", size=12, font_family="monospace", color=ACCENT_BLUE),
-                                            ft.Text("• Android APK deployment for mobile access", size=12, font_family="monospace", color=ACCENT_BLUE),
-                                            ft.Text("• GitHub for version control and collaboration", size=12, font_family="monospace", color=ACCENT_BLUE),
+                                            ft.Text("TECHNOLOGY STACK:", size=11, weight=ft.FontWeight.BOLD, color=DEEP_PINK),
+                                            ft.Text("• React Native for cross-platform mobile development", size=12, font_family="monospace", color=ACCENT_PINK),
+                                            ft.Text("• Firebase Realtime Database for instant synchronization", size=12, font_family="monospace", color=ACCENT_PINK),
+                                            ft.Text("• JavaScript/TypeScript for application logic", size=12, font_family="monospace", color=ACCENT_PINK),
+                                            ft.Text("• GitHub for version control and collaboration", size=12, font_family="monospace", color=ACCENT_PINK),
                                         ])
                                     ),
-                                    ft.Text("Enables mine operators to monitor environmental conditions, receive alerts, and coordinate emergency responses from a unified platform.", color=TEXT_GREY, size=12),
+                                    ft.Text("Enables mine workers to report hazards in real-time and supervisors to monitor safety conditions efficiently from anywhere.", color=TEXT_GREY, size=12),
                                     ft.Row([
-                                        ft.Container(content=ft.Text("Python", size=11, color=BG_WHITE), bgcolor=PRIMARY_BLUE, padding=5, border_radius=4),
-                                        ft.Container(content=ft.Text("Flet", size=11, color=DEEP_NAVY), bgcolor=LIGHT_BG, padding=5, border_radius=4),
-                                        ft.Container(content=ft.Text("MATLAB", size=11, color=DEEP_NAVY), bgcolor=LIGHT_BG, padding=5, border_radius=4),
+                                        ft.Container(content=ft.Text("React Native", size=11, color=BG_WHITE), bgcolor=PRIMARY_PINK, padding=5, border_radius=4),
+                                        ft.Container(content=ft.Text("Firebase", size=11, color=DEEP_PINK), bgcolor=LIGHT_BG, padding=5, border_radius=4),
+                                        ft.Container(content=ft.Text("JavaScript", size=11, color=DEEP_PINK), bgcolor=LIGHT_BG, padding=5, border_radius=4),
                                     ])
                                 ],
                             ),
@@ -621,27 +621,27 @@ def main(page: ft.Page):
                                 spacing=12,
                                 controls=[
                                     ft.Row([
-                                        ft.Icon(ft.Icons.SENSORS, color=ACCENT_BLUE, size=30),
-                                        ft.Text("2. MineOps Sensor Network Design", size=18, weight=ft.FontWeight.BOLD, color=ACCENT_BLUE),
+                                        ft.Icon(ft.Icons.SENSORS, color=ACCENT_PINK, size=30),
+                                        ft.Text("2. Mine Safety Sensor Network", size=18, weight=ft.FontWeight.BOLD, color=ACCENT_PINK),
                                     ]),
-                                    ft.Text("Sensor architecture for mine environmental monitoring using ESP32-based nodes with real-time data acquisition and transmission capabilities.", color=TEXT_GREY, size=14),
+                                    ft.Text("IoT sensor network design for environmental monitoring in mining operations using ESP32-based nodes.", color=TEXT_GREY, size=14),
                                     ft.Container(
                                         bgcolor=LIGHT_BG,
                                         padding=12,
                                         border_radius=6,
                                         content=ft.Column([
-                                            ft.Text("HARDWARE COMPONENTS:", size=11, weight=ft.FontWeight.BOLD, color=DEEP_NAVY),
-                                            ft.Text("• MQ-7 Gas Sensor for CO detection", size=12, font_family="monospace", color=ACCENT_BLUE),
-                                            ft.Text("• DHT22 Temperature/Humidity sensor", size=12, font_family="monospace", color=ACCENT_BLUE),
-                                            ft.Text("• ADXL345 Vibration sensor", size=12, font_family="monospace", color=ACCENT_BLUE),
-                                            ft.Text("• ESP32 Controller with WiFi/BLE", size=12, font_family="monospace", color=ACCENT_BLUE),
+                                            ft.Text("HARDWARE COMPONENTS:", size=11, weight=ft.FontWeight.BOLD, color=DEEP_PINK),
+                                            ft.Text("• MQ-7 Gas Sensor for CO detection", size=12, font_family="monospace", color=ACCENT_PINK),
+                                            ft.Text("• DHT22 Temperature/Humidity sensor", size=12, font_family="monospace", color=ACCENT_PINK),
+                                            ft.Text("• ADXL345 Vibration sensor for ground stability", size=12, font_family="monospace", color=ACCENT_PINK),
+                                            ft.Text("• ESP32 Controller with WiFi/BLE", size=12, font_family="monospace", color=ACCENT_PINK),
                                         ])
                                     ),
-                                    ft.Text("Enables continuous mine environmental monitoring with early warning capabilities for hazardous gas levels and activity detection.", color=TEXT_GREY, size=12),
+                                    ft.Text("Enables continuous mine environmental monitoring with early warning capabilities for hazardous gas levels and ground instability detection.", color=TEXT_GREY, size=12),
                                     ft.Row([
-                                        ft.Container(content=ft.Text("ESP32", size=11, color=BG_WHITE), bgcolor=PRIMARY_BLUE, padding=5, border_radius=4),
-                                        ft.Container(content=ft.Text("IoT Sensors", size=11, color=DEEP_NAVY), bgcolor=LIGHT_BG, padding=5, border_radius=4),
-                                        ft.Container(content=ft.Text("Embedded C", size=11, color=DEEP_NAVY), bgcolor=LIGHT_BG, padding=5, border_radius=4),
+                                        ft.Container(content=ft.Text("ESP32", size=11, color=BG_WHITE), bgcolor=PRIMARY_PINK, padding=5, border_radius=4),
+                                        ft.Container(content=ft.Text("IoT Sensors", size=11, color=DEEP_PINK), bgcolor=LIGHT_BG, padding=5, border_radius=4),
+                                        ft.Container(content=ft.Text("Embedded C", size=11, color=DEEP_PINK), bgcolor=LIGHT_BG, padding=5, border_radius=4),
                                     ])
                                 ],
                             ),
@@ -674,13 +674,13 @@ def main(page: ft.Page):
                             content=ft.Column(
                                 spacing=12,
                                 controls=[
-                                    ft.Text("Understanding Mine Ventilation Systems", size=18, weight=ft.FontWeight.BOLD, color=ACCENT_BLUE),
+                                    ft.Text("Understanding Mine Ventilation Systems", size=18, weight=ft.FontWeight.BOLD, color=ACCENT_PINK),
                                     ft.Text("Application of fundamental principles in mine ventilation and air quality management for miner safety.", color=TEXT_GREY, size=13),
                                     ft.Container(
                                         bgcolor=LIGHT_BG,
                                         padding=14,
                                         border_radius=6,
-                                        content=ft.Text("Q = A × V   |   Pressure Drop = R × Q²   |   Mine Airflow = Σ (Sections)", font_family="monospace", size=14, color=PRIMARY_BLUE),
+                                        content=ft.Text("Q = A × V   |   Pressure Drop = R × Q²   |   Mine Airflow = Σ (Sections)", font_family="monospace", size=14, color=PRIMARY_PINK),
                                     ),
                                     ft.Text("Understanding these relationships is crucial for mine ventilation planning, gas detection systems, and miner safety in underground operations.", color=TEXT_GREY, size=13),
                                 ],
@@ -695,14 +695,14 @@ def main(page: ft.Page):
                             content=ft.Column(
                                 spacing=12,
                                 controls=[
-                                    ft.Text("MineOps Project Demonstration", size=18, weight=ft.FontWeight.BOLD, color=ACCENT_BLUE),
+                                    ft.Text("MineOps Project Demonstration", size=18, weight=ft.FontWeight.BOLD, color=ACCENT_PINK),
                                     ft.Text("Video showcase of the MineOps monitoring system in action.", color=TEXT_GREY, size=13),
                                     ft.Container(
                                         content=ftv.Video(
                                             expand=True,
                                             playlist=[ftv.VideoMedia("/video/video.mp4")],
                                             playlist_mode=ftv.PlaylistMode.LOOP,
-                                            fill_color=ACCENT_BLUE,
+                                            fill_color=ACCENT_PINK,
                                             aspect_ratio=16/9,
                                             volume=100,
                                             autoplay=True,
@@ -744,8 +744,8 @@ def main(page: ft.Page):
                             border_radius=8,
                             border=get_uniform_border(1, BORDER_COLOR),
                             content=ft.Column([
-                                ft.Icon(ft.Icons.GROUP, color=PRIMARY_BLUE, size=28),
-                                ft.Text("Mining Engineering Society", size=16, weight=ft.FontWeight.BOLD, color=DEEP_NAVY),
+                                ft.Icon(ft.Icons.GROUP, color=PRIMARY_PINK, size=28),
+                                ft.Text("Mining Engineering Society", size=16, weight=ft.FontWeight.BOLD, color=DEEP_PINK),
                                 ft.Text("Active member contributing to workshops, industry guest lectures, and technical seminars on emerging mining technologies.", color=TEXT_GREY, size=13),
                             ])
                         ),
@@ -756,9 +756,9 @@ def main(page: ft.Page):
                             border_radius=8,
                             border=get_uniform_border(1, BORDER_COLOR),
                             content=ft.Column([
-                                ft.Icon(ft.Icons.SETTINGS, color=PRIMARY_BLUE, size=28),
-                                ft.Text("MineOps Development Team", size=16, weight=ft.FontWeight.BOLD, color=DEEP_NAVY),
-                                ft.Text("Core contributor to MineOps monitoring system development, testing, and documentation.", color=TEXT_GREY, size=13),
+                                ft.Icon(ft.Icons.SETTINGS, color=PRIMARY_PINK, size=28),
+                                ft.Text("MineOps Lead Developer", size=16, weight=ft.FontWeight.BOLD, color=DEEP_PINK),
+                                ft.Text("Core contributor to MineOps mobile application development, Firebase integration, testing, and documentation.", color=TEXT_GREY, size=13),
                             ])
                         ),
                         ft.Container(
@@ -768,8 +768,8 @@ def main(page: ft.Page):
                             border_radius=8,
                             border=get_uniform_border(1, BORDER_COLOR),
                             content=ft.Column([
-                                ft.Icon(ft.Icons.SCHOOL, color=PRIMARY_BLUE, size=28),
-                                ft.Text("MathWorks Self-Paced Learning", size=16, weight=ft.FontWeight.BOLD, color=DEEP_NAVY),
+                                ft.Icon(ft.Icons.SCHOOL, color=PRIMARY_PINK, size=28),
+                                ft.Text("MathWorks Self-Paced Learning", size=16, weight=ft.FontWeight.BOLD, color=DEEP_PINK),
                                 ft.Text("Completed comprehensive MATLAB and Simulink certification courses to enhance computational engineering capabilities.", color=TEXT_GREY, size=13),
                             ])
                         ),
@@ -804,7 +804,7 @@ def main(page: ft.Page):
             bgcolor=DARK_CARD_BG,
             padding=15,
             border_radius=10,
-            border=get_uniform_border(1, ACCENT_BLUE),
+            border=get_uniform_border(1, ACCENT_PINK),
             on_click=lambda e, title=cert["title"], img_src=cert["image"]: open_certificate_zoom(title, img_src),
             content=ft.Column(
                 horizontal_alignment=ft.CrossAxisAlignment.CENTER,
@@ -837,7 +837,7 @@ def main(page: ft.Page):
             def handle_hover(e):
                 if e.data == "true":
                     inner_move_container.top = 0  
-                    inner_move_container.shadow = ft.BoxShadow(blur_radius=12, color=ACCENT_BLUE)
+                    inner_move_container.shadow = ft.BoxShadow(blur_radius=12, color=ACCENT_PINK)
                     target_img.scale = 1.05  
                 else:
                     inner_move_container.top = 10  
@@ -876,10 +876,10 @@ def main(page: ft.Page):
                     alignment=ft.MainAxisAlignment.SPACE_BETWEEN,
                     controls=[
                         ft.Column([
-                            ft.Text("GITHUB EVIDENCE & DOCUMENTATION", size=28, weight=ft.FontWeight.BOLD, color=PRIMARY_BLUE),
+                            ft.Text("GITHUB EVIDENCE & DOCUMENTATION", size=28, weight=ft.FontWeight.BOLD, color=PRIMARY_PINK),
                             ft.Text("Verifiable individual contribution records for MineOps project development.", size=15, color=TEXT_GREY),
                         ]),
-                        ft.IconButton(icon=ft.Icons.CODE, icon_color=PRIMARY_BLUE, tooltip="GitHub Evidence")
+                        ft.IconButton(icon=ft.Icons.CODE, icon_color=PRIMARY_PINK, tooltip="GitHub Evidence")
                     ]
                 ),
                 ft.ResponsiveRow(
@@ -906,7 +906,7 @@ def main(page: ft.Page):
                             col={"sm": 12, "md": 4},
                             content=create_info_card(
                                 "Impact Summary",
-                                "My code and documentation improved sensor integration, dashboard functionality, and explained mining engineering outputs for compliance.",
+                                "My code and documentation improved hazard reporting functionality, sensor integration, dashboard monitoring, and explained mining engineering outputs for compliance.",
                                 ft.Icons.INSIGHTS,
                             ),
                         ),
@@ -925,17 +925,17 @@ def main(page: ft.Page):
                             content=ft.Column(
                                 spacing=12,
                                 controls=[
-                                    ft.Row([ft.Icon(ft.Icons.FOLDER_SPECIAL, color=PRIMARY_BLUE), ft.Text("MineOps-App", size=16, weight=ft.FontWeight.BOLD, color=DEEP_NAVY)]),
-                                    ft.Text("Python/Flet based mine monitoring platform with real-time alerts and emergency response features.", size=13, color=TEXT_GREY),
+                                    ft.Row([ft.Icon(ft.Icons.FOLDER_SPECIAL, color=PRIMARY_PINK), ft.Text("MineOps-App", size=16, weight=ft.FontWeight.BOLD, color=DEEP_PINK)]),
+                                    ft.Text("React Native mobile application for mining safety with real-time hazard reporting and Firebase integration.", size=13, color=TEXT_GREY),
                                     ft.Row(wrap=True, spacing=5, controls=[
-                                        ft.Container(content=ft.Text("Python", size=10, color=BG_WHITE), bgcolor=PRIMARY_BLUE, padding=4, border_radius=4),
-                                        ft.Container(content=ft.Text("Flet", size=10, color=DEEP_NAVY), bgcolor=LIGHT_BG, padding=4, border_radius=4),
-                                        ft.Container(content=ft.Text("MATLAB", size=10, color=DEEP_NAVY), bgcolor=LIGHT_BG, padding=4, border_radius=4),
+                                        ft.Container(content=ft.Text("React Native", size=10, color=BG_WHITE), bgcolor=PRIMARY_PINK, padding=4, border_radius=4),
+                                        ft.Container(content=ft.Text("Firebase", size=10, color=DEEP_PINK), bgcolor=LIGHT_BG, padding=4, border_radius=4),
+                                        ft.Container(content=ft.Text("JavaScript", size=10, color=DEEP_PINK), bgcolor=LIGHT_BG, padding=4, border_radius=4),
                                     ]),
                                     ft.Divider(color=BORDER_COLOR),
                                     ft.Row(alignment=ft.MainAxisAlignment.SPACE_BETWEEN, controls=[
                                         ft.Text("Active Development", size=11, color=SUBTEXT_GREY),
-                                        ft.TextButton("View Repository", style=ft.ButtonStyle(color=ACCENT_BLUE))
+                                        ft.TextButton("View Repository", style=ft.ButtonStyle(color=ACCENT_PINK), on_click=lambda e: page.launch_url("https://github.com/makotajr06/UNAM-I3691CP-SyntaxCrew-MineOps"))
                                     ])
                                 ]
                             )
@@ -949,16 +949,16 @@ def main(page: ft.Page):
                             content=ft.Column(
                                 spacing=12,
                                 controls=[
-                                    ft.Row([ft.Icon(ft.Icons.FOLDER, color=PRIMARY_BLUE), ft.Text("MineOps-Sensor-Network", size=16, weight=ft.FontWeight.BOLD, color=DEEP_NAVY)]),
+                                    ft.Row([ft.Icon(ft.Icons.FOLDER, color=PRIMARY_PINK), ft.Text("MineOps-Sensor-Network", size=16, weight=ft.FontWeight.BOLD, color=DEEP_PINK)]),
                                     ft.Text("ESP32-based sensor network for mine environmental monitoring with gas, temperature, and vibration sensors.", size=13, color=TEXT_GREY),
                                     ft.Row(wrap=True, spacing=5, controls=[
-                                        ft.Container(content=ft.Text("Embedded C", size=10, color=BG_WHITE), bgcolor=PRIMARY_BLUE, padding=4, border_radius=4),
-                                        ft.Container(content=ft.Text("ESP32", size=10, color=DEEP_NAVY), bgcolor=LIGHT_BG, padding=4, border_radius=4),
+                                        ft.Container(content=ft.Text("Embedded C", size=10, color=BG_WHITE), bgcolor=PRIMARY_PINK, padding=4, border_radius=4),
+                                        ft.Container(content=ft.Text("ESP32", size=10, color=DEEP_PINK), bgcolor=LIGHT_BG, padding=4, border_radius=4),
                                     ]),
                                     ft.Divider(color=BORDER_COLOR),
                                     ft.Row(alignment=ft.MainAxisAlignment.SPACE_BETWEEN, controls=[
                                         ft.Text("Stable Release", size=11, color=SUBTEXT_GREY),
-                                        ft.TextButton("View Repository", style=ft.ButtonStyle(color=ACCENT_BLUE))
+                                        ft.TextButton("View Repository", style=ft.ButtonStyle(color=ACCENT_PINK))
                                     ])
                                 ]
                             )
@@ -974,7 +974,7 @@ def main(page: ft.Page):
     # =========================================================
     mineops_section = ft.Container(
         key="mineops",
-        bgcolor=MINEOPS_DARK,
+        bgcolor=MINEOPS_PINK,
         padding=50,
         content=ft.Column(
             spacing=25,
@@ -985,7 +985,7 @@ def main(page: ft.Page):
                     "⚒️ DEDICATED TO MINEOPS ⚒️",
                     size=32,
                     weight=ft.FontWeight.BOLD,
-                    color=MINEOPS_GOLD,
+                    color=BG_WHITE,
                     text_align=ft.TextAlign.CENTER,
                     style=ft.TextStyle(letter_spacing=2),
                 ),
@@ -1005,7 +1005,7 @@ def main(page: ft.Page):
                 ft.Text(
                     "an innovative initiative revolutionizing mining safety through intelligent monitoring systems, real-time hazard detection, and advanced industrial automation.",
                     size=16,
-                    color="#cbd5e1",
+                    color="#ffe0f0",
                     text_align=ft.TextAlign.CENTER,
                     italic=True,
                 ),
@@ -1022,19 +1022,19 @@ def main(page: ft.Page):
                                 "🔗 MineOps Repository",
                                 size=14,
                                 weight=ft.FontWeight.BOLD,
-                                color=MINEOPS_DARK,
+                                color=DEEP_PINK,
                             ),
                             on_click=lambda e: page.launch_url("https://github.com/makotajr06/UNAM-I3691CP-SyntaxCrew-MineOps"),
                         ),
                         ft.Container(
-                            bgcolor=ACCENT_BLUE,
+                            bgcolor=BG_WHITE,
                             padding=ft.Padding(20, 10, 20, 10),
                             border_radius=8,
                             content=ft.Text(
-                                "🏗️ SyntaxCrew Project",
+                                "🏗️ SyntaxCrew Team",
                                 size=14,
                                 weight=ft.FontWeight.BOLD,
-                                color=BG_WHITE,
+                                color=PRIMARY_PINK,
                             ),
                             on_click=lambda e: page.launch_url("https://github.com/makotajr06/UNAM-I3691CP-SyntaxCrew-MineOps"),
                         ),
@@ -1044,7 +1044,7 @@ def main(page: ft.Page):
                 ft.Text(
                     "© 2024 | Honoring the vision of safer, smarter mining operations",
                     size=12,
-                    color="#94a3b8",
+                    color="#ffe0f0",
                     text_align=ft.TextAlign.CENTER,
                 ),
             ],
@@ -1052,15 +1052,15 @@ def main(page: ft.Page):
     )
 
     # 10. Contact Section Form Setup
-    name_field = ft.TextField(label="Your Full Name", border_color=PRIMARY_BLUE, focused_border_color=ACCENT_BLUE)
-    email_field = ft.TextField(label="Email Address", border_color=PRIMARY_BLUE, focused_border_color=ACCENT_BLUE)
-    message_field = ft.TextField(label="Project Details / Inquiry Message", multiline=True, min_lines=4, border_color=PRIMARY_BLUE, focused_border_color=ACCENT_BLUE)
+    name_field = ft.TextField(label="Your Full Name", border_color=PRIMARY_PINK, focused_border_color=ACCENT_PINK)
+    email_field = ft.TextField(label="Email Address", border_color=PRIMARY_PINK, focused_border_color=ACCENT_PINK)
+    message_field = ft.TextField(label="Project Details / Inquiry Message", multiline=True, min_lines=4, border_color=PRIMARY_PINK, focused_border_color=ACCENT_PINK)
 
     def handle_submit_message(e):
         if not name_field.value or not email_field.value:
-            page.show_snack_bar(ft.SnackBar(content=ft.Text("Please fill out your Name and Email fields before submitting."), bgcolor=ACCENT_BLUE))
+            page.show_snack_bar(ft.SnackBar(content=ft.Text("Please fill out your Name and Email fields before submitting."), bgcolor=ACCENT_PINK))
         else:
-            page.show_snack_bar(ft.SnackBar(content=ft.Text(f"Thank you {name_field.value}! Your message was compiled and sent successfully."), bgcolor=PRIMARY_BLUE))
+            page.show_snack_bar(ft.SnackBar(content=ft.Text(f"Thank you {name_field.value}! Your message was compiled and sent successfully."), bgcolor=PRIMARY_PINK))
             name_field.value = ""
             email_field.value = ""
             message_field.value = ""
@@ -1081,9 +1081,9 @@ def main(page: ft.Page):
                         controls=[
                             ft.Text("Available for Mining Engineering collaborations, automation projects, mine safety research, industrial monitoring solutions, and embedded systems development.", color=TEXT_GREY, size=15),
                             ft.Container(height=10),
-                            ft.Row([ft.Icon(ft.Icons.LOCATION_ON, color=PRIMARY_BLUE), ft.Text("Mining Engineering Campus, University of Namibia, Namibia", color=DEEP_NAVY, weight=ft.FontWeight.W_500)]),
-                            ft.Row([ft.Icon(ft.Icons.EMAIL, color=PRIMARY_BLUE), ft.Text("shimutwikeni@gmail.com", color=DEEP_NAVY, weight=ft.FontWeight.W_500)]),
-                            ft.Row([ft.Icon(ft.Icons.PHONE, color=PRIMARY_BLUE), ft.Text("+264 81 360 9793", color=DEEP_NAVY, weight=ft.FontWeight.W_500)]),
+                            ft.Row([ft.Icon(ft.Icons.LOCATION_ON, color=PRIMARY_PINK), ft.Text("Mining Engineering Campus, University of Namibia, Namibia", color=DEEP_PINK, weight=ft.FontWeight.W_500)]),
+                            ft.Row([ft.Icon(ft.Icons.EMAIL, color=PRIMARY_PINK), ft.Text("shimutwikeni@gmail.com", color=DEEP_PINK, weight=ft.FontWeight.W_500)]),
+                            ft.Row([ft.Icon(ft.Icons.PHONE, color=PRIMARY_PINK), ft.Text("+264 81 360 9793", color=DEEP_PINK, weight=ft.FontWeight.W_500)]),
                         ]
                     ),
                     ft.Container(
@@ -1095,10 +1095,10 @@ def main(page: ft.Page):
                         content=ft.Column(
                             spacing=15,
                             controls=[
-                                ft.Text("Send a Message Directly", size=16, weight=ft.FontWeight.BOLD, color=DEEP_NAVY),
+                                ft.Text("Send a Message Directly", size=16, weight=ft.FontWeight.BOLD, color=DEEP_PINK),
                                 name_field, email_field, message_field,
                                 ft.Container(height=5),
-                                ft.ElevatedButton("Submit Message", icon=ft.Icons.SEND, bgcolor=PRIMARY_BLUE, color=BG_WHITE, on_click=handle_submit_message, style=ft.ButtonStyle(shape=ft.RoundedRectangleBorder(radius=6))),
+                                ft.ElevatedButton("Submit Message", icon=ft.Icons.SEND, bgcolor=PRIMARY_PINK, color=BG_WHITE, on_click=handle_submit_message, style=ft.ButtonStyle(shape=ft.RoundedRectangleBorder(radius=6))),
                                 ft.Text(
                                     "I consent to having Lavinia Ndilimeke Shimutwikeni store my submitted information so that she can respond to my inquiry.",
                                     size=11,
@@ -1141,7 +1141,7 @@ def main(page: ft.Page):
             label,
             style=ft.ButtonStyle(
                 color=BG_WHITE if page_key == current_page_key["value"] else NAV_INACTIVE,
-                overlay_color=OVERLAY_BLUE,
+                overlay_color=OVERLAY_PINK,
             ),
             on_click=lambda e, target=page_key: navigate_to(target),
         )
@@ -1152,10 +1152,10 @@ def main(page: ft.Page):
     # STICKY NAVBAR PANEL (Pinned permanently to top layer)
     # =========================================================
     header_navbar = ft.Container(
-        bgcolor=PRIMARY_BLUE,
+        bgcolor=PRIMARY_PINK,
         padding=ft.Padding(40, 15, 40, 15),
-        border=ft.Border(bottom=ft.BorderSide(1, ACCENT_BLUE)),
-        shadow=ft.BoxShadow(blur_radius=10, color=SHADOW_BLUE, offset=ft.Offset(0, 2)),
+        border=ft.Border(bottom=ft.BorderSide(1, ACCENT_PINK)),
+        shadow=ft.BoxShadow(blur_radius=10, color=SHADOW_PINK, offset=ft.Offset(0, 2)),
         content=ft.Row(
             alignment=ft.MainAxisAlignment.SPACE_BETWEEN,
             controls=[
